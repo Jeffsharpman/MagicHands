@@ -1,6 +1,12 @@
-// import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "motion/react";
+import {
+  SEOHead,
+  JsonLd,
+  LocalBusinessSchema,
+  AboutDeveloper,
+  FooterAttribution,
+} from "../seo";
 import heroSuit from "../../assets/hero-suit.jpg";
 import cBusiness from "../../assets/collection-business.jpg";
 import cWedding from "../../assets/collection-wedding.jpg";
@@ -364,6 +370,10 @@ function Hero() {
       <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center px-6 pt-32 pb-16 md:pt-40 md:pb-24 lg:grid lg:grid-cols-2 lg:gap-12">
         {/* Left Content */}
         <motion.div style={{ opacity }} className="text-center lg:text-left">
+          {/* Hidden heading for SEO — reinforces brand entity */}
+          <h1 className="sr-only">
+            MagicHands — Premium Bespoke Suits by Sharpman
+          </h1>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -504,7 +514,7 @@ function Hero() {
               <div className="relative h-full w-full overflow-hidden rounded-[2rem] gold-border shadow-[0_40px_100px_-20px_rgba(212,175,55,0.4)]">
                 <img
                   src={heroSuit}
-                  alt="Bespoke black double-breasted suit"
+                  alt="MagicHands premium bespoke black double-breasted suit by Top Dawg Suit — designed by Oyenuga Joshua (Sharpman)"
                   className="h-full w-full object-cover"
                 />
 
@@ -732,7 +742,7 @@ function CollectionCard({ c, i }) {
       <div className="relative aspect-[4/5] overflow-hidden">
         <img
           src={c.img}
-          alt={c.title}
+          alt={`${c.title} — MagicHands bespoke suit by Top Dawg Suit, designed by Oyenuga Joshua (Sharpman)`}
           loading="lazy"
           width={800}
           height={1000}
@@ -846,7 +856,7 @@ function WhyUs() {
         <SectionHeader
           eyebrow="WHY TOP DAWG"
           title='The Details <span class="text-gold-gradient italic">Everyone Else</span> Skips'
-          sub="Seven promises that separate a suit from a Top Dawg suit."
+          sub="Seven promises — by Oyenuga Joshua (Sharpman) — that separate a suit from a Top Dawg suit."
         />
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
@@ -937,7 +947,7 @@ function Configurator() {
         <SectionHeader
           eyebrow="ATELIER LAB"
           title='Design Your <span class="text-gold-gradient italic">Signature</span>'
-          sub="Rotate, recolor, restyle. A live preview of the suit that will define you."
+          sub="Rotate, recolor, restyle — a live preview of the suit that will define you. Built by Sharpman."
         />
 
         <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center">
@@ -964,6 +974,8 @@ function Configurator() {
                 style={{ transformStyle: "preserve-3d" }}
                 animate={{ rotateY: rot }}
                 transition={{ type: "spring", stiffness: 40, damping: 15 }}
+                role="img"
+                aria-label="Interactive bespoke suit configurator — MagicHands by Top Dawg Suit"
               >
                 <defs>
                   <linearGradient id="suitG" x1="0" y1="0" x2="1" y2="1">
@@ -1140,7 +1152,7 @@ function Process() {
         <SectionHeader
           eyebrow="THE PROCESS"
           title='From Vision to <span class="text-gold-gradient italic">Vestment</span>'
-          sub="Five deliberate steps. Zero shortcuts."
+          sub="Five deliberate steps. Zero shortcuts. Developed by Sharpman."
         />
 
         <div className="relative">
@@ -1319,7 +1331,7 @@ function Gallery() {
         <SectionHeader
           eyebrow="THE GALLERY"
           title='Moments in <span class="text-gold-gradient italic">Bespoke</span>'
-          sub="A curated look at the suits, the fittings, and the stages they've owned."
+          sub="A curated look at the suits, the fittings, and the stages they've owned — crafted under the Sharpman brand."
         />
 
         <div className="columns-1 gap-4 sm:columns-2 lg:columns-3 [column-fill:_balance]">
@@ -1343,7 +1355,7 @@ function Gallery() {
             >
               <img
                 src={image}
-                alt=""
+                alt={`MagicHands bespoke suit — Top Dawg Suit collection piece ${index + 1} by Oyenuga Joshua (Sharpman)`}
                 loading="lazy"
                 className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-110"
               />
@@ -1667,13 +1679,24 @@ function Footer() {
         {/* Bottom Bar */}
         <div className="mt-14 flex flex-col items-center justify-between gap-3 border-t border-[color:var(--gold)]/15 pt-6 md:flex-row">
           <div className="font-ui text-[10px] tracking-[0.3em] text-white/40">
-            © {new Date().getFullYear()} TOP DAWG SUIT · BUILT FOR THE TOP DAWG
+            © {new Date().getFullYear()} TOP DAWG SUIT · PART OF THE{" "}
+            <a
+              href="https://sharpman.netlify.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[color:var(--gold)]/60 transition-colors hover:text-[color:var(--gold)]"
+            >
+              SHARPMAN
+            </a>{" "}
+            PORTFOLIO
           </div>
 
           <div className="font-ui text-[10px] tracking-[0.3em] text-white/40">
             CRAFTED IN LAGOS
           </div>
         </div>
+
+        <FooterAttribution />
       </div>
     </footer>
   );
@@ -1715,6 +1738,10 @@ function Home() {
 
   return (
     <div className="relative min-h-screen bg-black text-white">
+      <SEOHead />
+      <JsonLd />
+      <LocalBusinessSchema />
+
       <LoadingScreen done={ready} />
 
       <ScrollProgress />
@@ -1734,6 +1761,7 @@ function Home() {
         <Contact />
       </main>
 
+      <AboutDeveloper />
       <Footer />
       <WhatsAppFAB />
     </div>
