@@ -7,19 +7,23 @@ import {
   AboutDeveloper,
   FooterAttribution,
 } from "../seo";
-import heroSuit from "../../assets/hero-suit.jpg";
+import heroImage from "../../assets/hero-suit.jpg";
 import cBusiness from "../../assets/collection-business.jpg";
 import cWedding from "../../assets/collection-wedding.jpg";
 import cConvocation from "../../assets/collection-convocation.jpg";
 import cTraditional from "../../assets/collection-traditional.jpg";
 import cExecutive from "../../assets/collection-executive.jpg";
 import cTuxedo from "../../assets/collection-tuxedo.jpg";
+import cAccessories from "../../assets/collection-accessories.jpg";
+import cFootwear from "../../assets/collection-footwear.jpg";
+import cFragrance from "../../assets/collection-fragrance.jpg";
+import cTraditionalWear from "../../assets/collection-traditional-wear.jpg";
 
 const NAV = [
   ["Home", "#home"],
   ["Collections", "#collections"],
-  ["Occasions", "#occasions"],
   ["About", "#about"],
+  ["Style Lab", "#occasions"],
   ["Testimonials", "#testimonials"],
   ["Gallery", "#gallery"],
   ["Contact", "#contact"],
@@ -33,18 +37,18 @@ function Logo({ className = "" }) {
 
         <div className="relative flex h-full w-full items-center justify-center rounded-full border border-[color:var(--gold)]/60 bg-black">
           <span className="font-display text-lg font-bold text-gold-gradient">
-            TD
+            MH
           </span>
         </div>
       </div>
 
       <div className="leading-tight">
         <div className="font-display text-lg tracking-widest text-gold-gradient">
-          TOP DAWG
+                    MAGIC HANDS
         </div>
 
         <div className="font-ui text-[10px] tracking-[0.4em] text-[color:var(--gold)]/70">
-          — SUIT —
+          — FASHION —
         </div>
       </div>
     </div>
@@ -110,7 +114,7 @@ function LoadingScreen({ done }) {
             }}
             className="mt-6 font-ui text-[10px] tracking-[0.5em] text-[color:var(--gold)]/60"
           >
-            BUILT FOR THE TOP DAWG
+            ENGINEERED FOR THE MOMENTS THAT DEFINE YOU
           </motion.p>
         </motion.div>
       )}
@@ -279,31 +283,31 @@ function Nav() {
 }
 
 function Particles() {
-  const items = Array.from({ length: 24 });
+  const items = Array.from({ length: 24 }, () => ({
+    size: 2 + Math.random() * 4,
+    left: Math.random() * 100,
+    delay: Math.random() * 8,
+    dur: 10 + Math.random() * 12,
+  }));
 
   return (
     <div
       aria-hidden
       className="pointer-events-none absolute inset-0 overflow-hidden"
     >
-      {items.map((_, i) => {
-        const size = 2 + Math.random() * 4;
-        const left = Math.random() * 100;
-        const delay = Math.random() * 8;
-        const dur = 10 + Math.random() * 12;
-
+      {items.map((item, i) => {
         return (
           <span
             key={i}
             className="absolute rounded-full"
             style={{
-              left: `${left}%`,
+              left: `${item.left}%`,
               top: "-5%",
-              width: size,
-              height: size,
+              width: item.size,
+              height: item.size,
               background: "radial-gradient(circle, #F5E6A7, transparent 70%)",
               boxShadow: "0 0 8px rgba(212, 175, 55, 0.7)",
-              animation: `fall ${dur}s linear ${delay}s infinite`,
+              animation: `fall ${item.dur}s linear ${item.delay}s infinite`,
             }}
           />
         );
@@ -372,7 +376,7 @@ function Hero() {
         <motion.div style={{ opacity }} className="text-center lg:text-left">
           {/* Hidden heading for SEO — reinforces brand entity */}
           <h1 className="sr-only">
-            MagicHands — Premium Bespoke Suits by Sharpman
+            MagicHands — Premium Fashion Brand by Sharpman
           </h1>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -383,11 +387,11 @@ function Hero() {
             <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--gold)] animate-pulse" />
 
             <span className="font-ui text-[10px] tracking-[0.35em] text-[color:var(--gold)]">
-              BESPOKE ATELIER · EST. 2019
+              FASHION BRAND · EST. 2019 · LAGOS
             </span>
           </motion.div>
 
-          <motion.h1
+          <motion.h2
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -397,7 +401,7 @@ function Hero() {
             }}
             className="font-display text-5xl leading-[0.95] tracking-tight md:text-7xl lg:text-[5.5rem]"
           >
-            <span className="block text-white">Crafted for</span>
+            <span className="block text-white">Fashion Built</span>
 
             <span
               className="block text-gold-gradient animate-shimmer"
@@ -409,9 +413,9 @@ function Hero() {
                 color: "transparent",
               }}
             >
-              Leaders.
+              for You.
             </span>
-          </motion.h1>
+          </motion.h2>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -419,8 +423,9 @@ function Hero() {
             transition={{ duration: 1, delay: 2.1 }}
             className="mt-6 max-w-xl text-base leading-relaxed text-white/70 md:text-lg lg:mx-0 mx-auto"
           >
-            Premium bespoke suits designed for convocation, weddings, project
-            defence, corporate executives, and the moments that define you.
+            Custom-tailored clothing, accessories, footwear, and fragrances
+            designed for the moments that matter. Every piece is made with
+            precision — not mass-produced.
           </motion.p>
 
           <motion.div
@@ -433,7 +438,7 @@ function Hero() {
               href="#contact"
               className="group relative overflow-hidden rounded-full bg-gold-gradient px-8 py-4 font-ui text-xs font-semibold uppercase tracking-[0.25em] text-black shadow-[0_20px_50px_-15px_rgba(212,175,55,0.7)] transition-transform hover:scale-[1.04]"
             >
-              <span className="relative z-10">Book Consultation</span>
+              <span className="relative z-10">Book a Consultation</span>
 
               <span className="absolute inset-0 -translate-x-full bg-white/30 transition-transform duration-700 group-hover:translate-x-full" />
             </a>
@@ -442,7 +447,7 @@ function Hero() {
               href="#collections"
               className="group inline-flex items-center gap-2 rounded-full border border-[color:var(--gold)]/40 px-8 py-4 font-ui text-xs font-semibold uppercase tracking-[0.25em] text-[color:var(--gold)] transition-colors hover:bg-[color:var(--gold)]/10"
             >
-              View Collection
+              View Collections
               <span className="transition-transform group-hover:translate-x-1">
                 →
               </span>
@@ -456,8 +461,8 @@ function Hero() {
             className="mt-14 grid grid-cols-3 gap-6 border-t border-[color:var(--gold)]/15 pt-6 max-w-md lg:mx-0 mx-auto"
           >
             {[
-              ["1,200+", "Suits crafted"],
-              ["6+", "Years mastery"],
+              ["1,200+", "Pieces delivered"],
+              ["6+", "Years of craft"],
               ["4.9★", "Client rating"],
             ].map(([n, l]) => (
               <div key={l} className="text-center lg:text-left">
@@ -513,8 +518,8 @@ function Hero() {
             >
               <div className="relative h-full w-full overflow-hidden rounded-[2rem] gold-border shadow-[0_40px_100px_-20px_rgba(212,175,55,0.4)]">
                 <img
-                  src={heroSuit}
-                  alt="MagicHands premium bespoke black double-breasted suit by Top Dawg Suit — designed by Oyenuga Joshua (Sharpman)"
+                  src={heroImage}
+                  alt="MagicHands premium black double-breasted suit — designed by Oyenuga Joshua (Sharpman)"
                   className="h-full w-full object-cover"
                 />
 
@@ -523,7 +528,7 @@ function Hero() {
                 <div className="absolute inset-x-6 bottom-6 flex items-end justify-between">
                   <div>
                     <div className="font-ui text-[10px] tracking-[0.35em] text-[color:var(--gold)]/80">
-                      SIGNATURE PIECE
+                      SIGNATURE COLLECTION
                     </div>
 
                     <div className="font-display text-xl text-white">
@@ -549,11 +554,11 @@ function Hero() {
                 transition={{ duration: 5, repeat: Infinity }}
               >
                 <div className="font-ui text-[9px] tracking-[0.3em] text-[color:var(--gold)]">
-                  HAND-STITCHED
+                  PREMIUM MATERIALS
                 </div>
 
                 <div className="font-display text-sm text-white">
-                  Super 150s Wool
+                  Italian & English Mills
                 </div>
               </motion.div>
 
@@ -563,11 +568,11 @@ function Hero() {
                 transition={{ duration: 6, repeat: Infinity }}
               >
                 <div className="font-ui text-[9px] tracking-[0.3em] text-[color:var(--gold)]">
-                  FIT GUARANTEE
+                  QUALITY GUARANTEE
                 </div>
 
                 <div className="font-display text-sm text-white">
-                  Perfect · Lifetime
+                  Made to Last
                 </div>
               </motion.div>
             </motion.div>
@@ -596,23 +601,6 @@ function Hero() {
         />
       </motion.div>
 
-      <div className="mt-14 grid grid-cols-3 gap-6 border-t border-[color:var(--gold)]/15 pt-6 max-w-md lg:mx-0 mx-auto">
-        {[
-          ["1,200+", "Suits crafted"],
-          ["6+", "Years mastery"],
-          ["4.9★", "Client rating"],
-        ].map(([n, l]) => (
-          <div key={l} className="text-center lg:text-left">
-            <div className="font-display text-2xl text-gold-gradient md:text-3xl">
-              {n}
-            </div>
-
-            <div className="mt-1 font-ui text-[10px] tracking-[0.2em] text-white/50">
-              {l.toUpperCase()}
-            </div>
-          </div>
-        ))}
-      </div>
     </section>
   );
 }
@@ -665,13 +653,13 @@ function SectionHeader({ eyebrow, title, sub }) {
 
 function Marquee() {
   const items = [
-    "Bespoke Craft",
-    "Convocation",
-    "Weddings",
-    "Executive",
-    "Project Defence",
-    "Traditional",
-    "Luxury Tuxedos",
+    "Tailored Suits",
+    "Formal Wear",
+    "Accessories",
+    "Fragrances",
+    "Footwear",
+    "Traditional Wear",
+    "Luxury Collections",
   ];
 
   return (
@@ -693,33 +681,33 @@ function Marquee() {
 
 const COLLECTIONS = [
   {
-    title: "Business Collection",
-    desc: "Sharp, commanding, ready for the boardroom.",
+    title: "Tailored Clothing",
+    desc: "Custom-fit suits, shirts, and trousers built for boardrooms, weddings, and formal events. Each piece is cut to fit your body — not a mannequin.",
     img: cBusiness,
   },
   {
-    title: "Wedding Collection",
-    desc: "Ivory, silk, and the moment you say I do.",
-    img: cWedding,
+    title: "Accessories",
+    desc: "Ties, pocket squares, cufflinks, and belts selected to complete a look. Every accessory is chosen to match or contrast with your outfit.",
+    img: cAccessories,
   },
   {
-    title: "Convocation",
-    desc: "Own the stage you've worked years to climb.",
-    img: cConvocation,
+    title: "Footwear",
+    desc: "Leather shoes, loafers, and formal footwear made from sourced leather. Designed to pair with tailored clothing for a finished look.",
+    img: cFootwear,
   },
   {
-    title: "Traditional",
-    desc: "Heritage embroidery meets modern silhouettes.",
-    img: cTraditional,
+    title: "Fragrances",
+    desc: "Signature scents built for everyday wear and special occasions. Each fragrance is selected to leave a lasting impression without overpowering.",
+    img: cFragrance,
   },
   {
-    title: "Executive",
-    desc: "Pinstripe authority for the c-suite gentleman.",
-    img: cExecutive,
+    title: "Traditional Wear",
+    desc: "Heritage-inspired clothing that merges Nigerian textile traditions with modern construction. Hand-finished embroidery and detailing on every piece.",
+    img: cTraditionalWear,
   },
   {
-    title: "Luxury Tuxedos",
-    desc: "Black tie, satin lapels, unforgettable evenings.",
+    title: "Luxury Collections",
+    desc: "Limited-run pieces with premium materials and hand-finished details. Designed for occasions where the standard is not enough.",
     img: cTuxedo,
   },
 ];
@@ -742,7 +730,7 @@ function CollectionCard({ c, i }) {
       <div className="relative aspect-[4/5] overflow-hidden">
         <img
           src={c.img}
-          alt={`${c.title} — MagicHands bespoke suit by Top Dawg Suit, designed by Oyenuga Joshua (Sharpman)`}
+          alt={`${c.title} — MagicHands collection, designed by Oyenuga Joshua (Sharpman)`}
           loading="lazy"
           width={800}
           height={1000}
@@ -776,7 +764,7 @@ function CollectionCard({ c, i }) {
             EXPLORE →
           </span>
 
-          <span className="font-display text-sm text-white/40">Bespoke</span>
+          <span className="font-display text-sm text-white/40">Collection</span>
         </div>
       </div>
     </motion.a>
@@ -788,9 +776,9 @@ function Collections() {
     <section id="collections" className="relative py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeader
-          eyebrow="FEATURED COLLECTIONS"
-          title='Signature <span class="text-gold-gradient italic">Editions</span>'
-          sub="Six lines. One obsession. Cut, canvassed, and finished by hand in our atelier."
+          eyebrow="COLLECTIONS"
+          title='Six Lines. <span class="text-gold-gradient italic">One Standard.</span>'
+          sub="From tailored clothing to fragrances, each line is built with the same attention to material and construction. The difference is in how it's designed to be used."
         />
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -806,38 +794,38 @@ function Collections() {
 const WHY = [
   {
     icon: "◆",
-    title: "Premium Quality",
-    desc: "Only Super 130s–180s wools, silks, and cashmere blends.",
+    title: "Premium Materials",
+    desc: "We source fabrics from Italian and English mills, leather from trusted tanneries, and fragrances from established perfumers. Every material is tested for quality before it enters our supply chain.",
   },
   {
     icon: "✧",
-    title: "Perfect Fit",
-    desc: "20+ point precision measurements per client.",
+    title: "Custom Fit",
+    desc: "Generic sizing assumes average proportions. Every MagicHands tailored piece starts with body-specific measurements — the fit is built for your frame, not a mannequin.",
   },
   {
     icon: "❖",
-    title: "Expert Craftsmanship",
-    desc: "Hand-canvassed jackets, hand-stitched details.",
+    title: "Built to Last",
+    desc: "Fast fashion falls apart after a few washes. Our construction methods — reinforced seams, quality stitching, and tested materials — are designed for years of regular use.",
   },
   {
     icon: "✦",
-    title: "Luxury Fabrics",
-    desc: "Sourced from Italian and English mills.",
+    title: "Direct from Source",
+    desc: "We cut out the middleman. Fabric, leather, and materials are selected directly from mills and suppliers, then stored in our Lagos atelier for immediate access.",
   },
   {
     icon: "◈",
-    title: "Custom Measurements",
-    desc: "Your body, your style, your suit — no compromise.",
+    title: "Tailored to Order",
+    desc: "Off-the-rack pieces assume one size fits all. Our pattern-making and construction are done per client — every seam, cut, and detail is positioned for your specific body.",
   },
   {
     icon: "❋",
-    title: "Fast Delivery",
-    desc: "Bespoke ready in 2–3 weeks. Rush available.",
+    title: "Fast Turnaround",
+    desc: "Custom usually means waiting weeks. We optimized our workflow to deliver in 2–3 weeks without cutting corners on material quality or finishing.",
   },
   {
     icon: "♛",
-    title: "Lifetime Elegance",
-    desc: "Free alterations for life. That's our promise.",
+    title: "Free Alterations",
+    desc: "Bodies change over time. Every MagicHands tailored piece includes free alterations for life — your clothes should always fit the way they do right now.",
   },
 ];
 
@@ -854,9 +842,9 @@ function WhyUs() {
 
       <div className="relative mx-auto max-w-7xl px-6">
         <SectionHeader
-          eyebrow="WHY TOP DAWG"
-          title='The Details <span class="text-gold-gradient italic">Everyone Else</span> Skips'
-          sub="Seven promises — by Oyenuga Joshua (Sharpman) — that separate a suit from a Top Dawg suit."
+          eyebrow="WHY MAGIC HANDS"
+          title='Why MagicHands <span class="text-gold-gradient italic">Is Different</span>'
+          sub="Seven decisions that separate a well-made fashion brand from a well-marketed one. Built by Oyenuga Joshua under the Sharpman brand."
         />
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
@@ -898,7 +886,7 @@ function WhyUs() {
   );
 }
 
-const SUIT_COLORS = [
+const FABRIC_COLORS = [
   { name: "Onyx", hex: "#0a0a0a", accent: "#1a1a1a" },
   { name: "Navy", hex: "#0f1a3a", accent: "#1a2a55" },
   { name: "Charcoal", hex: "#2a2a2a", accent: "#3a3a3a" },
@@ -906,11 +894,17 @@ const SUIT_COLORS = [
   { name: "Ivory", hex: "#e8dfc7", accent: "#f2ead4" },
 ];
 
-const TIES = ["#D4AF37", "#5B0A0A", "#0a1a3a", "#111", "#7b3f00"];
+const ACCENT_COLORS = [
+  { name: "Gold", hex: "#D4AF37" },
+  { name: "Burgundy", hex: "#5B0A0A" },
+  { name: "Navy", hex: "#0a1a3a" },
+  { name: "Black", hex: "#111" },
+  { name: "Brown", hex: "#7b3f00" },
+];
 
 function Configurator() {
-  const [color, setColor] = useState(SUIT_COLORS[0]);
-  const [tie, setTie] = useState(TIES[3]);
+  const [color, setColor] = useState(FABRIC_COLORS[0]);
+  const [tie, setTie] = useState(ACCENT_COLORS[3]);
   const [rot, setRot] = useState(0);
 
   const dragRef = useRef(null);
@@ -945,9 +939,9 @@ function Configurator() {
       />
       <div className="relative mx-auto max-w-7xl px-6">
         <SectionHeader
-          eyebrow="ATELIER LAB"
-          title='Design Your <span class="text-gold-gradient italic">Signature</span>'
-          sub="Rotate, recolor, restyle — a live preview of the suit that will define you. Built by Sharpman."
+          eyebrow="STYLE LAB"
+          title='Configure Your <span class="text-gold-gradient italic">Look</span>'
+          sub="See your color, fabric, and accessory choices on a live preview before you order. Every configuration maps to real materials in our collection."
         />
 
         <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center">
@@ -966,7 +960,7 @@ function Configurator() {
               <div className="h-96 w-96 rounded-full border border-[color:var(--gold)]/5" />
             </div>
 
-            {/* SVG suit */}
+            {/* SVG preview */}
             <div className="absolute inset-0 flex items-center justify-center [perspective:1000px]">
               <motion.svg
                 viewBox="0 0 300 500"
@@ -975,10 +969,10 @@ function Configurator() {
                 animate={{ rotateY: rot }}
                 transition={{ type: "spring", stiffness: 40, damping: 15 }}
                 role="img"
-                aria-label="Interactive bespoke suit configurator — MagicHands by Top Dawg Suit"
+                aria-label="Interactive fashion configurator — MagicHands"
               >
                 <defs>
-                  <linearGradient id="suitG" x1="0" y1="0" x2="1" y2="1">
+                  <linearGradient id="garmentG" x1="0" y1="0" x2="1" y2="1">
                     <stop offset="0%" stopColor={color.accent} />
                     <stop offset="50%" stopColor={color.hex} />
                     <stop offset="100%" stopColor="#000" />
@@ -994,7 +988,7 @@ function Configurator() {
                 {/* Shoulders/jacket */}
                 <path
                   d="M 40 100 Q 150 60 260 100 L 270 480 L 30 480 Z"
-                  fill="url(#suitG)"
+                  fill="url(#garmentG)"
                 />
                 {/* Shirt */}
                 <path
@@ -1015,11 +1009,11 @@ function Configurator() {
                 {/* Tie */}
                 <path
                   d="M 145 100 L 155 100 L 158 140 L 150 155 L 142 140 Z"
-                  fill={tie}
+                  fill={tie.hex}
                 />
                 <path
                   d="M 138 155 L 162 155 L 168 280 L 150 320 L 132 280 Z"
-                  fill={tie}
+                  fill={tie.hex}
                 />
                 {/* Buttons */}
                 {[190, 240, 290, 340].map((y) => (
@@ -1060,7 +1054,7 @@ function Configurator() {
                 </div>
               </div>
               <div className="flex flex-wrap gap-3">
-                {SUIT_COLORS.map((c) => (
+                {FABRIC_COLORS.map((c) => (
                   <button
                     key={c.name}
                     onClick={() => setColor(c)}
@@ -1080,16 +1074,16 @@ function Configurator() {
 
             <div>
               <div className="mb-3 font-ui text-[10px] tracking-[0.3em] text-[color:var(--gold)]">
-                TIE
+                ACCENT
               </div>
               <div className="flex flex-wrap gap-3">
-                {TIES.map((t) => (
+                {ACCENT_COLORS.map((t) => (
                   <button
-                    key={t}
+                    key={t.hex}
                     onClick={() => setTie(t)}
                     className={`h-12 w-8 rounded-md border-2 transition-transform hover:-translate-y-1 ${tie === t ? "border-[color:var(--gold)] scale-105" : "border-white/10"}`}
-                    style={{ background: t }}
-                    aria-label="Tie color"
+                    style={{ background: t.hex }}
+                    aria-label={`Accent color: ${t.name}`}
                   />
                 ))}
               </div>
@@ -1097,10 +1091,10 @@ function Configurator() {
 
             <div className="grid grid-cols-2 gap-3">
               {[
-                ["FABRIC", "Super 150s Wool"],
-                ["LINING", "Bemberg Silk"],
-                ["LAPEL", "Peak · Satin"],
-                ["FIT", "Slim Bespoke"],
+                ["FABRIC", "Premium Wool Blend"],
+                ["LINING", "Silk Interior"],
+                ["STYLE", "Peak Lapel"],
+                ["FIT", "Slim Tailored"],
               ].map(([k, v]) => (
                 <div key={k} className="glass rounded-xl p-4">
                   <div className="font-ui text-[9px] tracking-[0.3em] text-[color:var(--gold)]/80">
@@ -1117,7 +1111,7 @@ function Configurator() {
               href="#contact"
               className="group inline-flex w-full items-center justify-between rounded-full bg-gold-gradient px-6 py-4 font-ui text-xs font-semibold uppercase tracking-[0.25em] text-black shadow-[0_20px_50px_-15px_rgba(212,175,55,0.6)] transition-transform hover:scale-[1.02]"
             >
-              <span>Book This Design</span>
+              <span>Order This Look</span>
               <span className="transition-transform group-hover:translate-x-1">
                 →
               </span>
@@ -1132,27 +1126,39 @@ function Configurator() {
 const STEPS = [
   [
     "01",
-    "Book Appointment",
-    "Reserve a consultation at our atelier or virtual studio.",
+    "Consultation",
+    "A one-on-one session — in-person at our Lagos atelier or virtual — to understand what you need, your style preferences, and the occasion.",
   ],
   [
     "02",
-    "Take Measurements",
-    "20+ precision points captured by a master tailor.",
+    "Measurement & Selection",
+    "Body measurements taken by a master tailor, plus fabric and material selection. These numbers and choices drive every cut and detail.",
   ],
-  ["03", "Tailoring", "Hand-canvassed construction. 60+ hours per suit."],
-  ["04", "Final Fitting", "Refinements made until the fit is flawless."],
-  ["05", "Delivery", "Presented in signature packaging. Yours forever."],
+  [
+    "03",
+    "Construction",
+    "Each piece is built by hand using traditional methods — reinforced seams, quality stitching, and tested materials. Nothing is rushed.",
+  ],
+  [
+    "04",
+    "Quality Check",
+    "Every piece is inspected for stitching, fit, material quality, and finishing. If it does not meet our standard, it does not leave the atelier.",
+  ],
+  [
+    "05",
+    "Delivery",
+    "Final pressing, quality check, and presentation in signature packaging. Your order is documented for future alterations or reorders.",
+  ],
 ];
 
 function Process() {
   return (
-    <section className="relative py-24 md:py-32">
+    <section id="process" className="relative py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeader
-          eyebrow="THE PROCESS"
-          title='From Vision to <span class="text-gold-gradient italic">Vestment</span>'
-          sub="Five deliberate steps. Zero shortcuts. Developed by Sharpman."
+          eyebrow="HOW IT WORKS"
+          title='From Order to <span class="text-gold-gradient italic">Delivery</span>'
+          sub="Five steps. No shortcuts. Every stage is quality-checked before moving to the next."
         />
 
         <div className="relative">
@@ -1221,37 +1227,37 @@ const TESTIMONIALS = [
   {
     name: "Adewale O.",
     role: "CEO, Lagos",
-    text: "The most compliments I've ever received on a suit. The fit is unreal.",
+    text: "The fit on my tailored shirt and trousers is unreal. I stopped buying off-the-rack after my first order.",
     init: "AO",
   },
   {
     name: "Chinedu M.",
     role: "Groom",
-    text: "Wedding day perfection. Every guest asked where the suit was made.",
+    text: "Wedding outfit arrived on time, fit was perfect from the first try. No alterations needed — rare for custom clothing.",
     init: "CM",
   },
   {
     name: "Femi B.",
     role: "Convocation '25",
-    text: "Walked across that stage feeling like the version of me I always wanted.",
+    text: "Walked across that stage in a MagicHands outfit and understood what well-made clothing actually does for your confidence.",
     init: "FB",
   },
   {
     name: "Tunde S.",
     role: "Investment Banker",
-    text: "This is what bespoke should feel like. Nothing else compares.",
+    text: "Replaced my entire work wardrobe with MagicHands pieces. The fabric, the stitching, the fit — the difference is real, not just branding.",
     init: "TS",
   },
   {
     name: "Kunle A.",
     role: "Barrister",
-    text: "Court, dinner, boardroom — one suit handles it all with authority.",
+    text: "Court, dinner, boardroom — MagicHands pieces handle all three. The quality holds up to twelve-hour days without losing shape.",
     init: "KA",
   },
   {
     name: "Emeka R.",
     role: "MC & Speaker",
-    text: "Every stage feels like mine when I'm wearing Top Dawg.",
+    text: "Stage lighting exposes every flaw. MagicHands pieces hold up under any condition. I have never had to adjust or worry once.",
     init: "ER",
   },
 ];
@@ -1264,8 +1270,8 @@ function Testimonials() {
     >
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeader
-          eyebrow="CLIENT VOICES"
-          title='Worn by <span class="text-gold-gradient italic">Leaders</span>'
+          eyebrow="WHAT OUR CLIENTS SAY"
+          title='Built to <span class="text-gold-gradient italic">Perform</span>'
         />
       </div>
 
@@ -1283,7 +1289,7 @@ function Testimonials() {
               key={index}
               className="w-[340px] shrink-0 rounded-3xl glass p-7"
             >
-              <div className="mb-3 flex text-[color:var(--gold)]">★★★★★</div>
+              <div className="mb-3 flex text-[color:var(--gold)]" aria-label="5 out of 5 stars">★★★★★</div>
 
               <p className="leading-relaxed text-white/80">
                 "{testimonial.text}"
@@ -1313,29 +1319,83 @@ function Testimonials() {
 }
 
 function Gallery() {
-  const images = [
-    cBusiness,
-    cWedding,
-    cConvocation,
-    cTraditional,
-    cExecutive,
-    cTuxedo,
-    cWedding,
-    cBusiness,
-    cTuxedo,
+  const pieces = [
+    {
+      img: cBusiness,
+      title: "Onyx Two-Piece",
+      category: "Tailored Clothing",
+      material: "Super 150s Wool",
+      detail: "Peak lapel, half-canvas construction",
+    },
+    {
+      img: cAccessories,
+      title: "Silk Pocket Square Set",
+      category: "Accessories",
+      material: "Italian Silk",
+      detail: "Hand-rolled edges, set of 3",
+    },
+    {
+      img: cFootwear,
+      title: "Oxford Derby",
+      category: "Footwear",
+      material: "Full-Grain Leather",
+      detail: "Blake-stitched sole, leather lining",
+    },
+    {
+      img: cTraditional,
+      title: "Senator Wear",
+      category: "Traditional Wear",
+      material: "Cotton-Silk Blend",
+      detail: "Hand-embroidered neckline",
+    },
+    {
+      img: cFragrance,
+      title: "Oud & Gold",
+      category: "Fragrance",
+      material: "Concentrated Eau de Parfum",
+      detail: "100ml, 12+ hour longevity",
+    },
+    {
+      img: cTuxedo,
+      title: "Midnight Tuxedo",
+      category: "Luxury Collections",
+      material: "Wool-Silk Blend",
+      detail: "Satin peak lapel, jetted pockets",
+    },
+    {
+      img: cExecutive,
+      title: "Boardroom Stripe",
+      category: "Tailored Clothing",
+      material: "Super 130s Wool",
+      detail: "Double vents, functioning cuffs",
+    },
+    {
+      img: cWedding,
+      title: "Ivory Dinner Jacket",
+      category: "Luxury Collections",
+      material: "Wool-Mohair Blend",
+      detail: "Shawl lapel, single-button closure",
+    },
+    {
+      img: cConvocation,
+      title: "Graduation Classic",
+      category: "Tailored Clothing",
+      material: "Super 120s Wool",
+      detail: "Notch lapel, slim fit construction",
+    },
   ];
 
   return (
     <section id="gallery" className="relative py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeader
-          eyebrow="THE GALLERY"
-          title='Moments in <span class="text-gold-gradient italic">Bespoke</span>'
-          sub="A curated look at the suits, the fittings, and the stages they've owned — crafted under the Sharpman brand."
+          eyebrow="COLLECTION GALLERY"
+          title='Craftsmanship in <span class="text-gold-gradient italic">Detail</span>'
+          sub="Each piece is made using traditional methods and premium materials — built under the Sharpman brand."
         />
 
-        <div className="columns-1 gap-4 sm:columns-2 lg:columns-3 [column-fill:_balance]">
-          {images.map((image, index) => (
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {pieces.map((piece, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 40 }}
@@ -1345,32 +1405,36 @@ function Gallery() {
                 duration: 0.7,
                 delay: (index % 3) * 0.08,
               }}
-              className={`group relative mb-4 overflow-hidden rounded-2xl border border-[color:var(--gold)]/15 break-inside-avoid ${
-                index % 3 === 1
-                  ? "aspect-[3/4]"
-                  : index % 3 === 2
-                    ? "aspect-square"
-                    : "aspect-[4/5]"
-              }`}
+              className="group relative overflow-hidden rounded-2xl border border-[color:var(--gold)]/15 bg-[#0a0806]"
             >
-              <img
-                src={image}
-                alt={`MagicHands bespoke suit — Top Dawg Suit collection piece ${index + 1} by Oyenuga Joshua (Sharpman)`}
-                loading="lazy"
-                className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-110"
-              />
+              <div className="relative aspect-[4/5] overflow-hidden">
+                <img
+                  src={piece.img}
+                  alt={`${piece.title} — ${piece.category}, MagicHands`}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-110"
+                />
 
-              <div className="absolute inset-0 bg-black/40 opacity-0 backdrop-blur-sm transition-opacity duration-500 group-hover:opacity-100" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80" />
 
-              <div className="absolute inset-x-4 bottom-4 translate-y-4 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                <div className="glass rounded-xl px-3 py-2">
-                  <div className="font-ui text-[9px] tracking-[0.3em] text-[color:var(--gold)]">
-                    TOP DAWG
-                  </div>
+                <div className="absolute left-3 top-3 rounded-full bg-black/60 px-3 py-1 font-ui text-[9px] tracking-[0.25em] text-[color:var(--gold)]">
+                  {piece.category.toUpperCase()}
+                </div>
+              </div>
 
-                  <div className="font-display text-white">
-                    Bespoke Piece #{index + 1}
-                  </div>
+              <div className="relative p-5">
+                <h3 className="font-display text-lg text-white">
+                  {piece.title}
+                </h3>
+
+                <div className="mt-2 flex items-center gap-3 text-white/50">
+                  <span className="font-ui text-[10px] tracking-[0.15em]">
+                    {piece.material}
+                  </span>
+                  <span className="text-[color:var(--gold)]/40">·</span>
+                  <span className="font-ui text-[10px] tracking-[0.15em]">
+                    {piece.detail}
+                  </span>
                 </div>
               </div>
             </motion.div>
@@ -1383,24 +1447,24 @@ function Gallery() {
 
 const FAQS = [
   [
-    "How long does a bespoke suit take?",
-    "Standard turnaround is 2–3 weeks from measurements to delivery. Rush orders can be accommodated with a surcharge.",
+    "How long does a custom order take?",
+    "Standard turnaround is 2–3 weeks from order to delivery. This includes material selection, construction, quality check, and finishing. Rush orders are available for time-sensitive occasions.",
   ],
   [
     "Do you offer virtual consultations?",
-    "Yes. We run virtual fittings for clients outside Lagos with a self-measurement kit sent to your door.",
+    "Yes. Clients outside Lagos can order remotely. We guide you through measurements, material selection, and fitting via video call. Adjustments are made upon delivery if needed.",
   ],
   [
     "What is your alteration policy?",
-    "All Top Dawg suits come with free alterations for life. Your body changes; we keep the fit perfect.",
+    "Every MagicHands tailored piece includes free alterations for life. Bodies change over time — your clothes should always fit the way they do right now.",
   ],
   [
-    "What fabrics do you use?",
-    "We stock Super 130s to 180s wools, silk blends, cashmere, and specialty fabrics from Italy and England.",
+    "What materials do you use?",
+    "We source fabrics from Italian and English mills, leather from trusted tanneries, and fragrances from established perfumers. Every material is tested for quality before it enters our collection.",
   ],
   [
     "Do you deliver nationwide?",
-    "Yes — nationwide across Nigeria, and internationally on request.",
+    "Yes — delivery covers all states across Nigeria. International shipping is available on request. Every order is packed with care and includes handling instructions.",
   ],
 ];
 
@@ -1408,11 +1472,11 @@ function FAQ() {
   const [open, setOpen] = useState(0);
 
   return (
-    <section className="relative py-24 md:py-32">
+    <section id="faq" className="relative py-24 md:py-32">
       <div className="mx-auto max-w-4xl px-6">
         <SectionHeader
-          eyebrow="FAQ"
-          title='Answered <span class="text-gold-gradient italic">Clearly</span>'
+          eyebrow="FREQUENTLY ASKED"
+          title='Everything <span class="text-gold-gradient italic">Answered</span>'
         />
 
         <div className="space-y-3">
@@ -1423,6 +1487,7 @@ function FAQ() {
             >
               <button
                 onClick={() => setOpen(open === index ? null : index)}
+                aria-expanded={open === index}
                 className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left transition-colors hover:bg-[color:var(--gold)]/5"
               >
                 <span className="font-display text-lg text-white md:text-xl">
@@ -1481,9 +1546,9 @@ function Contact() {
 
       <div className="relative mx-auto max-w-7xl px-6">
         <SectionHeader
-          eyebrow="BOOK YOUR APPOINTMENT"
-          title='Step Into the <span class="text-gold-gradient italic">Atelier</span>'
-          sub="Reserve your consultation. A master tailor will guide you personally."
+          eyebrow="GET IN TOUCH"
+          title='Start Your <span class="text-gold-gradient italic">Order</span>'
+          sub="Schedule a consultation or place a remote order. Every piece starts with a conversation about what you need."
         />
 
         <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr]">
@@ -1526,7 +1591,7 @@ function Contact() {
 
               <div className="md:col-span-2">
                 <label className="font-ui text-[10px] tracking-[0.3em] text-[color:var(--gold)]">
-                  TELL US ABOUT YOUR VISION
+                  DESCRIBE YOUR OCCASION OR STYLE PREFERENCE
                 </label>
 
                 <textarea
@@ -1550,10 +1615,10 @@ function Contact() {
           {/* Contact Information */}
           <div className="space-y-5">
             {[
-              ["ATELIER", "By appointment · Lagos, Nigeria"],
-              ["WHATSAPP", "+234 812 372 9433"],
-              ["SNAPCHAT", "ade_remi8746"],
-              ["TIKTOK", "@topdawg.suit"],
+              ["ATELIER", "By appointment only · Lagos, Nigeria"],
+              ["WHATSAPP", "+234 907 028 1022"],
+              ["TIKTOK", "@sharpman.dev"],
+              ["INSTAGRAM", "@sharpman_dev"],
               ["HOURS", "Mon–Sat · 10:00 – 19:00"],
             ].map(([title, value]) => (
               <div key={title} className="glass rounded-2xl p-5">
@@ -1585,7 +1650,7 @@ function Contact() {
                 <div className="mx-auto h-8 w-8 rounded-full bg-gold-gradient animate-pulse-gold" />
 
                 <div className="mt-2 font-ui text-[10px] tracking-[0.3em] text-[color:var(--gold)]">
-                  TOP DAWG ATELIER
+                  MAGIC HANDS ATELIER
                 </div>
               </div>
             </div>
@@ -1611,18 +1676,26 @@ function Footer() {
             <Logo />
 
             <p className="mt-5 max-w-sm text-white/60">
-              A bespoke atelier for the gentleman who understands that a suit is
-              a statement — not a garment.
+              A fashion brand built on quality-first principles — every piece
+              designed for fit, durability, and real-world use.
             </p>
 
             <div className="mt-6 flex items-center gap-3">
-              {["IG", "TT", "SC", "WA"].map((social) => (
+              {[
+                { label: "IG", href: "https://www.instagram.com/sharpman_dev" },
+                { label: "TT", href: "https://www.tiktok.com/@sharpman.dev" },
+                { label: "X", href: "https://x.com/sharpman_dev" },
+                { label: "YT", href: "https://youtube.com/@sharpman_dev" },
+                { label: "WA", href: "https://wa.me/2349070281022" },
+              ].map((social) => (
                 <a
-                  key={social}
-                  href="#"
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex h-10 w-10 items-center justify-center rounded-full border border-[color:var(--gold)]/30 font-ui text-[10px] tracking-widest text-[color:var(--gold)] transition-all hover:bg-gold-gradient hover:text-black"
                 >
-                  {social}
+                  {social.label}
                 </a>
               ))}
             </div>
@@ -1679,7 +1752,7 @@ function Footer() {
         {/* Bottom Bar */}
         <div className="mt-14 flex flex-col items-center justify-between gap-3 border-t border-[color:var(--gold)]/15 pt-6 md:flex-row">
           <div className="font-ui text-[10px] tracking-[0.3em] text-white/40">
-            © {new Date().getFullYear()} TOP DAWG SUIT · PART OF THE{" "}
+            © {new Date().getFullYear()} MAGIC HANDS · PART OF THE{" "}
             <a
               href="https://sharpman.netlify.app"
               target="_blank"
@@ -1692,7 +1765,7 @@ function Footer() {
           </div>
 
           <div className="font-ui text-[10px] tracking-[0.3em] text-white/40">
-            CRAFTED IN LAGOS
+            HANDMADE IN LAGOS, NIGERIA
           </div>
         </div>
 
@@ -1705,9 +1778,10 @@ function Footer() {
 function WhatsAppFAB() {
   return (
     <a
-      href="https://wa.me/2348123729433"
+      href="https://wa.me/2349070281022"
       target="_blank"
-      rel="noreferrer"
+      rel="noopener noreferrer"
+      aria-label="Chat on WhatsApp"
       className="group fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-gold-gradient shadow-[0_20px_50px_-10px_rgba(212,175,55,0.7)] animate-pulse-gold"
     >
       <svg

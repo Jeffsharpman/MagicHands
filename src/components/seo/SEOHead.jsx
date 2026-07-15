@@ -10,16 +10,19 @@ const DEVELOPER = {
   twitter: "https://x.com/sharpman_dev",
   instagram: "https://www.instagram.com/sharpman_dev",
   youtube: "https://youtube.com/@sharpman_dev",
+  facebook: "https://facebook.com/OyenugaJoshua",
+  tiktok: "https://www.tiktok.com/@sharpman.dev",
   whatsapp: "https://wa.me/2349070281022",
+  whatsappDisplay: "+234 907 028 1022",
   location: "Ikorodu, Lagos, Nigeria",
 };
 
 const PROJECT = {
-  name: "MagicHands - Top Dawg Suit",
+  name: "MagicHands — Premium Fashion Brand",
   description:
-    "MagicHands is a premium bespoke suit brand by Top Dawg Suit. Explore our collections of business, wedding, convocation, traditional, executive, and tuxedo suits — crafted for the gentleman who understands that a suit is a statement.",
+    "MagicHands is a fashion brand delivering custom-tailored clothing, accessories, footwear, fragrances, and lifestyle products. Every piece is made with precision — not mass-produced.",
   url: "https://magichands.netlify.app",
-  image: "/og-image.png",
+  image: "https://magichands.netlify.app/hero-og.jpg",
   themeColor: "#D4AF37",
 };
 
@@ -33,7 +36,7 @@ export default function SEOHead({
 }) {
   const pageTitle = title
     ? `${title} | MagicHands by Sharpman`
-    : "MagicHands — Premium Bespoke Suits | Designed by Sharpman";
+    : "MagicHands — Premium Fashion Brand | Designed by Sharpman";
 
   const pageDescription = description || PROJECT.description;
   const pageUrl = url || PROJECT.url;
@@ -46,7 +49,7 @@ export default function SEOHead({
       <meta name="author" content={DEVELOPER.name} />
       <meta name="creator" content={DEVELOPER.brand} />
       <meta name="publisher" content={DEVELOPER.brand} />
-      <meta name="keywords" content="bespoke suits, custom tailoring, MagicHands, Top Dawg Suit, Oyenuga Joshua, Sharpman, Lagos Nigeria, wedding suits, business suits, luxury fashion" />
+      <meta name="keywords" content="MagicHands, fashion brand, custom clothing, tailored suits, accessories, footwear, fragrances, Oyenuga Joshua, Sharpman, Lagos Nigeria, luxury fashion, menswear" />
       <meta name="theme-color" content={PROJECT.themeColor} />
       <link rel="canonical" href={pageUrl} />
 

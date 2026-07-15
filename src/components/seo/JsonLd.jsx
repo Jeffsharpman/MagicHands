@@ -3,12 +3,10 @@ import { DEVELOPER, PROJECT } from "./SEOHead";
 export default function JsonLd() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "WebApplication",
-    name: "MagicHands - Top Dawg Suit",
+    "@type": "WebSite",
+    name: "MagicHands — Premium Fashion Brand",
     description: PROJECT.description,
     url: PROJECT.url,
-    applicationCategory: "LifestyleApplication",
-    operatingSystem: "Web",
     inLanguage: "en",
     image: PROJECT.image,
 
@@ -37,7 +35,7 @@ export default function JsonLd() {
       "@type": "Organization",
       name: DEVELOPER.brand,
       url: DEVELOPER.portfolio,
-      description: "Sharpman is the personal web development and digital solutions brand founded by Oyenuga Joshua, specializing in custom websites, web applications, and digital solutions.",
+      description: "Sharpman is the web development and digital solutions brand founded by Oyenuga Joshua, specializing in custom websites, web applications, and digital solutions.",
       founder: {
         "@type": "Person",
         name: DEVELOPER.name,
@@ -79,7 +77,7 @@ export default function JsonLd() {
     },
 
     datePublished: "2025-01-01",
-    dateModified: new Date().toISOString(),
+    dateModified: "2025-01-01",
 
     breadcrumb: {
       "@type": "BreadcrumbList",
@@ -93,7 +91,7 @@ export default function JsonLd() {
         {
           "@type": "ListItem",
           position: 2,
-          name: "MagicHands - Top Dawg Suit",
+          name: "MagicHands — Premium Fashion Brand",
           item: PROJECT.url,
         },
       ],
@@ -112,10 +110,10 @@ export function LocalBusinessSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: "Top Dawg Suit - MagicHands",
-    description: "Premium bespoke suit atelier crafting custom suits for the gentleman who understands that a suit is a statement.",
+    name: "MagicHands",
+    description: "Premium fashion brand delivering custom-tailored clothing, accessories, footwear, fragrances, and lifestyle products.",
     url: PROJECT.url,
-    telephone: "+234 812 372 9433",
+    telephone: "+234 907 028 1022",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Ikorodu",

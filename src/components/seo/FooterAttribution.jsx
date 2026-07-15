@@ -4,7 +4,7 @@ export default function FooterAttribution() {
   return (
     <div className="mt-4 text-center">
       <p className="font-ui text-[9px] tracking-[0.25em] text-white/30">
-        Designed &amp; Developed by{" "}
+        Engineered by{" "}
         <a
           href={DEVELOPER.portfolio}
           target="_blank"
@@ -13,7 +13,7 @@ export default function FooterAttribution() {
         >
           {DEVELOPER.name}
         </a>{" "}
-        (
+        at{" "}
         <a
           href={DEVELOPER.portfolio}
           target="_blank"
@@ -21,8 +21,8 @@ export default function FooterAttribution() {
           className="text-[color:var(--gold)]/60 underline-offset-2 transition-colors hover:text-[color:var(--gold)] hover:underline"
         >
           Sharpman
-        </a>
-        )
+        </a>{" "}
+        — MagicHands is a Sharpman product
       </p>
     </div>
   );

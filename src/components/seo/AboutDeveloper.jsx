@@ -16,7 +16,7 @@ export default function AboutDeveloper() {
 
       <div className="relative mx-auto max-w-4xl px-6 text-center">
         <div className="mb-4 font-ui text-[10px] tracking-[0.4em] text-[color:var(--gold)]/60">
-          BUILT BY
+          PRODUCT ENGINEER
         </div>
 
         <h2 className="font-display text-3xl font-bold tracking-tight text-white md:text-4xl">
@@ -25,21 +25,17 @@ export default function AboutDeveloper() {
         </h2>
 
         <p className="mx-auto mt-5 max-w-2xl text-white/60 leading-relaxed">
-          <strong className="text-white/80">Sharpman</strong> is the personal
-          web development and digital solutions brand founded by{" "}
-          <strong className="text-white/80">Oyenuga Joshua</strong> — a Full
-          Stack Web Developer based in Ikorodu, Lagos, Nigeria. Sharpman
-          specializes in crafting custom websites, web applications, restaurant
-          sites, business platforms, landing pages, portfolios, e-commerce
-          solutions, admin dashboards, and SEO-optimized digital experiences
-          using modern technologies like React and Laravel.
+          <strong className="text-white/80">Oyenuga Joshua</strong> is the
+          founder behind MagicHands — a Full Stack Developer based in Ikorodu,
+          Lagos. MagicHands is a fashion brand delivering custom-tailored
+          clothing, accessories, footwear, fragrances, and lifestyle products.
         </p>
 
         <p className="mx-auto mt-4 max-w-2xl text-white/50 leading-relaxed">
-          <strong className="text-[color:var(--gold)]">MagicHands</strong> is
-          one of several projects developed by Oyenuga Joshua under the Sharpman
-          brand — each built with attention to performance, design, and real-world
-          impact.
+          <strong className="text-[color:var(--gold)]">Sharpman</strong> is the
+          development brand that built this site — specializing in custom web
+          applications, e-commerce platforms, and digital experiences using
+          React, Laravel, and modern tooling.
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
@@ -49,19 +45,19 @@ export default function AboutDeveloper() {
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 rounded-full bg-gold-gradient px-7 py-3.5 font-ui text-xs font-semibold uppercase tracking-[0.2em] text-black transition-transform hover:scale-[1.03]"
           >
-            Explore the Sharpman Portfolio
+            View the Sharpman Portfolio
             <span className="transition-transform group-hover:translate-x-1">
               →
             </span>
           </a>
 
           <a
-            href={DEVELOPER.portfolio}
+            href={DEVELOPER.portfolio + "#projects"}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full border border-[color:var(--gold)]/30 px-7 py-3.5 font-ui text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--gold)] transition-all hover:bg-[color:var(--gold)]/10"
           >
-            View more projects by Sharpman
+            More Sharpman Projects
           </a>
         </div>
 
@@ -96,6 +92,14 @@ export default function AboutDeveloper() {
             {
               label: "YouTube",
               href: DEVELOPER.youtube,
+            },
+            {
+              label: "Facebook",
+              href: DEVELOPER.facebook,
+            },
+            {
+              label: "TikTok",
+              href: DEVELOPER.tiktok,
             },
           ].map((link) => (
             <a
