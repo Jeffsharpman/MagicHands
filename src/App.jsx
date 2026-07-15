@@ -1,11 +1,11 @@
 import { HelmetProvider } from "react-helmet-async";
 import "./App.css";
-import Main from "./components/magicHands/Main";
+import Home from "./components/Home";
 
 function App() {
   return (
     <HelmetProvider>
-      <Main />
+      <Home />
     </HelmetProvider>
   );
 }

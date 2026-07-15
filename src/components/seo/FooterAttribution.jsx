@@ -9,7 +9,7 @@ export default function FooterAttribution() {
           href={DEVELOPER.portfolio}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[color:var(--gold)]/60 underline-offset-2 transition-colors hover:text-[color:var(--gold)] hover:underline"
+          className="text-(--gold)/60 underline-offset-2 transition-colors hover:text-(--gold) hover:underline"
         >
           {DEVELOPER.name}
         </a>{" "}
@@ -18,7 +18,7 @@ export default function FooterAttribution() {
           href={DEVELOPER.portfolio}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[color:var(--gold)]/60 underline-offset-2 transition-colors hover:text-[color:var(--gold)] hover:underline"
+          className="text-(--gold)/60 underline-offset-2 transition-colors hover:text-(--gold) hover:underline"
         >
           Sharpman
         </a>{" "}

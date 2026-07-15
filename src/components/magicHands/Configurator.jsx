@@ -1,0 +1,242 @@
+import { useEffect, useRef, useState } from "react";
+import { motion } from "motion/react";
+import SectionHeader from "../ui/SectionHeader";
+
+const FABRIC_COLORS = [
+  { name: "Onyx", hex: "#0a0a0a", accent: "#1a1a1a" },
+  { name: "Navy", hex: "#0f1a3a", accent: "#1a2a55" },
+  { name: "Charcoal", hex: "#2a2a2a", accent: "#3a3a3a" },
+  { name: "Camel", hex: "#8b6f43", accent: "#a58860" },
+  { name: "Ivory", hex: "#e8dfc7", accent: "#f2ead4" },
+];
+
+const ACCENT_COLORS = [
+  { name: "Gold", hex: "#D4AF37" },
+  { name: "Burgundy", hex: "#5B0A0A" },
+  { name: "Navy", hex: "#0a1a3a" },
+  { name: "Black", hex: "#111" },
+  { name: "Brown", hex: "#7b3f00" },
+];
+
+function Configurator() {
+  const [color, setColor] = useState(FABRIC_COLORS[0]);
+  const [tie, setTie] = useState(ACCENT_COLORS[3]);
+  const [rot, setRot] = useState(0);
+
+  const dragRef = useRef(null);
+
+  useEffect(() => {
+    const onUp = () => {
+      dragRef.current = null;
+    };
+
+    const onMove = (e) => {
+      if (!dragRef.current) return;
+
+      setRot(dragRef.current.base + (e.clientX - dragRef.current.x) * 0.6);
+    };
+
+    window.addEventListener("mouseup", onUp);
+    window.addEventListener("mousemove", onMove);
+
+    return () => {
+      window.removeEventListener("mouseup", onUp);
+      window.removeEventListener("mousemove", onMove);
+    };
+  }, []);
+
+  return (
+    <section id="occasions" className="relative overflow-hidden py-24 md:py-32">
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "linear-gradient(180deg, #000, #0a0803 50%, #000)",
+        }}
+      />
+      <div className="relative mx-auto max-w-7xl px-6">
+        <SectionHeader
+          eyebrow="STYLE LAB"
+          title='Configure Your <span class="text-gold-gradient italic">Look</span>'
+          sub="See your color, fabric, and accessory choices on a live preview before you order. Every configuration maps to real materials in our collection."
+        />
+
+        <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+          {/* 3D viewer */}
+          <div
+            className="relative aspect-square w-full overflow-hidden rounded-[2rem] border border-(--gold)/20 bg-[radial-gradient(ellipse_at_center,#1a1408_0%,#000_70%)] shadow-[var(--shadow-elegant)] cursor-grab active:cursor-grabbing select-none"
+            onMouseDown={(e) => (dragRef.current = { x: e.clientX, base: rot })}
+          >
+            {/* Studio floor */}
+            <div className="absolute inset-x-8 bottom-8 h-24 rounded-[50%] bg-gradient-to-b from-(--gold)/20 to-transparent blur-2xl" />
+            {/* Spot rings */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="h-72 w-72 rounded-full border border-(--gold)/10" />
+            </div>
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="h-96 w-96 rounded-full border border-(--gold)/5" />
+            </div>
+
+            {/* SVG preview */}
+            <div className="absolute inset-0 flex items-center justify-center [perspective:1000px]">
+              <motion.svg
+                viewBox="0 0 300 500"
+                className="h-[80%] drop-shadow-[0_30px_60px_rgba(0,0,0,0.7)]"
+                style={{ transformStyle: "preserve-3d" }}
+                animate={{ rotateY: rot }}
+                transition={{ type: "spring", stiffness: 40, damping: 15 }}
+                role="img"
+                aria-label="Interactive fashion configurator — MagicHands"
+              >
+                <defs>
+                  <linearGradient id="garmentG" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stopColor={color.accent} />
+                    <stop offset="50%" stopColor={color.hex} />
+                    <stop offset="100%" stopColor="#000" />
+                  </linearGradient>
+                  <linearGradient id="lapelG" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor={color.accent} />
+                    <stop offset="100%" stopColor={color.hex} />
+                  </linearGradient>
+                </defs>
+                {/* Mannequin head/stand */}
+                <ellipse cx="150" cy="30" rx="18" ry="20" fill="#1a1a1a" />
+                <rect x="146" y="45" width="8" height="20" fill="#1a1a1a" />
+                {/* Shoulders/jacket */}
+                <path
+                  d="M 40 100 Q 150 60 260 100 L 270 480 L 30 480 Z"
+                  fill="url(#garmentG)"
+                />
+                {/* Shirt */}
+                <path
+                  d="M 120 90 L 180 90 L 175 250 L 125 250 Z"
+                  fill="#f5f5f5"
+                />
+                {/* Lapels */}
+                <path
+                  d="M 120 90 L 150 250 L 90 320 L 90 130 Z"
+                  fill="url(#lapelG)"
+                  opacity="0.95"
+                />
+                <path
+                  d="M 180 90 L 150 250 L 210 320 L 210 130 Z"
+                  fill="url(#lapelG)"
+                  opacity="0.95"
+                />
+                {/* Tie */}
+                <path
+                  d="M 145 100 L 155 100 L 158 140 L 150 155 L 142 140 Z"
+                  fill={tie.hex}
+                />
+                <path
+                  d="M 138 155 L 162 155 L 168 280 L 150 320 L 132 280 Z"
+                  fill={tie.hex}
+                />
+                {/* Buttons */}
+                {[190, 240, 290, 340].map((y) => (
+                  <circle key={y} cx="115" cy={y} r="4" fill="#D4AF37" />
+                ))}
+                {[190, 240, 290, 340].map((y) => (
+                  <circle key={y + 1} cx="185" cy={y} r="4" fill="#D4AF37" />
+                ))}
+                {/* Pocket square */}
+                <rect
+                  x="205"
+                  y="180"
+                  width="18"
+                  height="14"
+                  fill="#F5E6A7"
+                  transform="rotate(8 214 187)"
+                />
+              </motion.svg>
+            </div>
+
+            <div className="absolute left-5 top-5 glass rounded-full px-3 py-1.5 font-ui text-[10px] tracking-[0.3em] text-(--gold)">
+              LIVE PREVIEW
+            </div>
+            <div className="absolute right-5 top-5 glass rounded-full px-3 py-1.5 font-ui text-[10px] tracking-[0.2em] text-white/70">
+              DRAG TO ROTATE
+            </div>
+          </div>
+
+          {/* Controls */}
+          <div className="space-y-8">
+            <div>
+              <div className="mb-3 flex items-center justify-between">
+                <div className="font-ui text-[10px] tracking-[0.3em] text-(--gold)">
+                  FABRIC COLOR
+                </div>
+                <div className="font-display italic text-white/70">
+                  {color.name}
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                {FABRIC_COLORS.map((c) => (
+                  <button
+                    key={c.name}
+                    onClick={() => setColor(c)}
+                    className={`group relative h-14 w-14 rounded-full border-2 transition-all ${color.name === c.name ? "border-(--gold) scale-110" : "border-white/10 hover:border-(--gold)/50"}`}
+                    style={{
+                      background: `linear-gradient(135deg, ${c.accent}, ${c.hex})`,
+                    }}
+                    aria-label={c.name}
+                  >
+                    {color.name === c.name && (
+                      <span className="absolute -bottom-1 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-(--gold)" />
+                    )}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <div className="mb-3 font-ui text-[10px] tracking-[0.3em] text-(--gold)">
+                ACCENT
+              </div>
+              <div className="flex flex-wrap gap-3">
+                {ACCENT_COLORS.map((t) => (
+                  <button
+                    key={t.hex}
+                    onClick={() => setTie(t)}
+                    className={`h-12 w-8 rounded-md border-2 transition-transform hover:-translate-y-1 ${tie === t ? "border-(--gold) scale-105" : "border-white/10"}`}
+                    style={{ background: t.hex }}
+                    aria-label={`Accent color: ${t.name}`}
+                  />
+                ))}
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3">
+              {[
+                ["FABRIC", "Premium Wool Blend"],
+                ["LINING", "Silk Interior"],
+                ["STYLE", "Peak Lapel"],
+                ["FIT", "Slim Tailored"],
+              ].map(([k, v]) => (
+                <div key={k} className="glass rounded-xl p-4">
+                  <div className="font-ui text-[9px] tracking-[0.3em] text-(--gold)/80">
+                    {k}
+                  </div>
+                  <div className="mt-1 font-display text-sm text-white">
+                    {v}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <a
+              href="#contact"
+              className="group inline-flex w-full items-center justify-between rounded-full bg-gold-gradient px-6 py-4 font-ui text-xs font-semibold uppercase tracking-[0.25em] text-black shadow-[0_20px_50px_-15px_rgba(212,175,55,0.6)] transition-transform hover:scale-[1.02]"
+            >
+              <span>Order This Look</span>
+              <span className="transition-transform group-hover:translate-x-1">
+                →
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default Configurator;
