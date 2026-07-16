@@ -18,25 +18,25 @@ const TESTIMONIALS = [
   {
     name: "Femi B.",
     role: "Convocation '25",
-    text: "Walked across that stage in a MagicHands outfit and understood what well-made clothing actually does for your confidence.",
+    text: "Walked across that stage in a MagicStitch outfit and understood what well-made clothing actually does for your confidence.",
     init: "FB",
   },
   {
     name: "Tunde S.",
     role: "Investment Banker",
-    text: "Replaced my entire work wardrobe with MagicHands pieces. The fabric, the stitching, the fit — the difference is real, not just branding.",
+    text: "Replaced my entire work wardrobe with MagicStitch pieces. The fabric, the stitching, the fit — the difference is real, not just branding.",
     init: "TS",
   },
   {
     name: "Kunle A.",
     role: "Barrister",
-    text: "Court, dinner, boardroom — MagicHands pieces handle all three. The quality holds up to twelve-hour days without losing shape.",
+    text: "Court, dinner, boardroom — MagicStitch pieces handle all three. The quality holds up to twelve-hour days without losing shape.",
     init: "KA",
   },
   {
     name: "Emeka R.",
     role: "MC & Speaker",
-    text: "Stage lighting exposes every flaw. MagicHands pieces hold up under any condition. I have never had to adjust or worry once.",
+    text: "Stage lighting exposes every flaw. MagicStitch pieces hold up under any condition. I have never had to adjust or worry once.",
     init: "ER",
   },
 ];

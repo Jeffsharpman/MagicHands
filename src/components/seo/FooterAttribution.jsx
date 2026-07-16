@@ -22,7 +22,7 @@ export default function FooterAttribution() {
         >
           Sharpman
         </a>{" "}
-        — MagicHands is a Sharpman product
+        — MagicStitch is a Sharpman product
       </p>
     </div>
   );

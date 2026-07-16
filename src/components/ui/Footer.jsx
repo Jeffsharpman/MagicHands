@@ -131,7 +131,7 @@ function Footer() {
         {/* Bottom Bar */}
         <div className="mt-14 flex flex-col items-center justify-between gap-3 border-t border-(--primary)/15 pt-6 md:flex-row">
           <div className="font-ui text-[10px] tracking-[0.3em] text-fg/40">
-            © {new Date().getFullYear()} MAGIC HANDS · PART OF THE{" "}
+            © {new Date().getFullYear()} MAGIC STITCH · PART OF THE{" "}
             <a
               href="https://sharpman.netlify.app"
               target="_blank"

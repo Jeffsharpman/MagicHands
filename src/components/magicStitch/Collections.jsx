@@ -58,7 +58,7 @@ function CollectionCard({ c, i }) {
       <div className="relative aspect-[4/5] overflow-hidden">
         <img
           src={c.img}
-          alt={`${c.title} — MagicHands collection, designed by Oyenuga Joshua (Sharpman)`}
+          alt={`${c.title} — MagicStitch collection, designed by Oyenuga Joshua (Sharpman)`}
           loading="lazy"
           width={800}
           height={1000}

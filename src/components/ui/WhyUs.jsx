@@ -19,7 +19,7 @@ const WHY = [
   {
     icon: <Scissors className="h-5 w-5" />,
     title: "Custom Fit",
-    desc: "Generic sizing assumes average proportions. Every MagicHands tailored piece starts with body-specific measurements — the fit is built for your frame, not a mannequin.",
+    desc: "Generic sizing assumes average proportions. Every MagicStitch tailored piece starts with body-specific measurements — the fit is built for your frame, not a mannequin.",
   },
   {
     icon: <Shield className="h-5 w-5" />,
@@ -44,7 +44,7 @@ const WHY = [
   {
     icon: <Heart className="h-5 w-5" />,
     title: "Free Alterations",
-    desc: "Bodies change over time. Every MagicHands tailored piece includes free alterations for life — your clothes should always fit the way they do right now.",
+    desc: "Bodies change over time. Every MagicStitch tailored piece includes free alterations for life — your clothes should always fit the way they do right now.",
   },
 ];
 
@@ -61,8 +61,8 @@ function WhyUs() {
 
       <div className="relative mx-auto max-w-7xl px-6">
         <SectionHeader
-          eyebrow="WHY MAGIC HANDS"
-          title='Why MagicHands <span class="text-gold-gradient italic">Is Different</span>'
+          eyebrow="WHY MAGIC STITCH"
+          title='Why MagicStitch <span class="text-gold-gradient italic">Is Different</span>'
           sub="Seven decisions that separate a well-made fashion brand from a well-marketed one. Built by Oyenuga Joshua under the Sharpman brand."
         />
 

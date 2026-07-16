@@ -1,4 +1,4 @@
-import LogoImage from "../../assets/magic-hands.png";
+import LogoImage from "../../assets/magic-stitch.png";
 
 function Logo({ className = "" }) {
   return (
@@ -16,7 +16,7 @@ function Logo({ className = "" }) {
       >
         <img
           src={LogoImage}
-          alt="Magic Hands Logo"
+          alt="Magic Stitch Logo"
           className="logo-img h-[96%] w-[96%] object-contain"
           draggable={false}
         />
@@ -24,7 +24,7 @@ function Logo({ className = "" }) {
 
       <div className="leading-none">
         <h1 className="font-display text-xl font-semibold tracking-[0.2em] text-gold-gradient">
-          MAGIC HANDS
+          MAGIC STITCH
         </h1>
 
         <p className="mt-1 font-ui text-[11px] uppercase tracking-[0.35em] text-(--primary)/70">

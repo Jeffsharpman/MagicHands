@@ -64,8 +64,8 @@ export default function AboutDeveloper() {
 
         <p className="mx-auto mt-5 max-w-2xl text-fg/60 leading-relaxed">
           <strong className="text-fg/80">Oyenuga Joshua</strong> is the
-          founder behind MagicHands — a Full Stack Developer based in Ikorodu,
-          Lagos. MagicHands is a fashion brand delivering custom-tailored
+          founder behind MagicStitch — a Full Stack Developer based in Ikorodu,
+          Lagos. MagicStitch is a fashion brand delivering custom-tailored
           clothing, accessories, footwear, fragrances, and lifestyle products.
         </p>
 

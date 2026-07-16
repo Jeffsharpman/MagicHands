@@ -66,7 +66,7 @@ function Hero() {
         <motion.div style={{ opacity }} className="text-center lg:text-left">
           {/* Hidden heading for SEO — reinforces brand entity */}
           <h1 className="sr-only">
-            MagicHands — Premium Fashion Brand by Sharpman
+            MagicStitch — Premium Fashion Brand by Sharpman
           </h1>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -198,7 +198,7 @@ function Hero() {
               <div className="relative h-full w-full overflow-hidden rounded-[2rem] gold-border shadow-[var(--shadow-primary-glow-xl)]">
                 <img
                   src={heroImage}
-                  alt="MagicHands premium black double-breasted suit — designed by Oyenuga Joshua (Sharpman)"
+                  alt="MagicStitch premium black double-breasted suit — designed by Oyenuga Joshua (Sharpman)"
                   className="h-full w-full object-cover"
                 />
 

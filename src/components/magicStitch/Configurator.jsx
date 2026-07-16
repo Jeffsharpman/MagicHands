@@ -88,7 +88,7 @@ function Configurator() {
                 animate={{ rotateY: rot }}
                 transition={{ type: "spring", stiffness: 40, damping: 15 }}
                 role="img"
-                aria-label="Interactive fashion configurator — MagicHands"
+                aria-label="Interactive fashion configurator — MagicStitch"
               >
                 <defs>
                   <linearGradient id="garmentG" x1="0" y1="0" x2="1" y2="1">

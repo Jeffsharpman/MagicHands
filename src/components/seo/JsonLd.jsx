@@ -4,7 +4,7 @@ export default function JsonLd() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "MagicHands — Premium Fashion Brand",
+    name: "MagicStitch — Premium Fashion Brand",
     description: PROJECT.description,
     url: PROJECT.url,
     inLanguage: "en",
@@ -91,7 +91,7 @@ export default function JsonLd() {
         {
           "@type": "ListItem",
           position: 2,
-          name: "MagicHands — Premium Fashion Brand",
+          name: "MagicStitch — Premium Fashion Brand",
           item: PROJECT.url,
         },
       ],
@@ -110,7 +110,7 @@ export function LocalBusinessSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: "MagicHands",
+    name: "MagicStitch",
     description: "Premium fashion brand delivering custom-tailored clothing, accessories, footwear, fragrances, and lifestyle products.",
     url: PROJECT.url,
     telephone: "+234 907 028 1022",

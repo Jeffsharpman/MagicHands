@@ -103,7 +103,7 @@ function Gallery() {
               <div className="relative aspect-[4/5] overflow-hidden">
                 <img
                   src={piece.img}
-                  alt={`${piece.title} — ${piece.category}, MagicHands`}
+                  alt={`${piece.title} — ${piece.category}, MagicStitch`}
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-110"
                 />

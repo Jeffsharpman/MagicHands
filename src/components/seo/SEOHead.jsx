@@ -18,11 +18,11 @@ const DEVELOPER = {
 };
 
 const PROJECT = {
-  name: "MagicHands — Premium Fashion Brand",
+  name: "MagicStitch — Premium Fashion Brand",
   description:
-    "MagicHands is a fashion brand delivering custom-tailored clothing, accessories, footwear, fragrances, and lifestyle products. Every piece is made with precision — not mass-produced.",
-  url: "https://magichands.netlify.app",
-  image: "https://magichands.netlify.app/hero-og.jpg",
+    "MagicStitch is a fashion brand delivering custom-tailored clothing, accessories, footwear, fragrances, and lifestyle products. Every piece is made with precision — not mass-produced.",
+  url: "https://magicstitch.netlify.app",
+  image: "https://magicstitch.netlify.app/hero-og.jpg",
   themeColor: "#D4AF37",
 };
 
@@ -35,8 +35,8 @@ export default function SEOHead({
   children,
 }) {
   const pageTitle = title
-    ? `${title} | MagicHands by Sharpman`
-    : "MagicHands — Premium Fashion Brand | Designed by Sharpman";
+    ? `${title} | MagicStitch by Sharpman`
+    : "MagicStitch — Premium Fashion Brand | Designed by Sharpman";
 
   const pageDescription = description || PROJECT.description;
   const pageUrl = url || PROJECT.url;
@@ -49,7 +49,7 @@ export default function SEOHead({
       <meta name="author" content={DEVELOPER.name} />
       <meta name="creator" content={DEVELOPER.brand} />
       <meta name="publisher" content={DEVELOPER.brand} />
-      <meta name="keywords" content="MagicHands, fashion brand, custom clothing, tailored suits, accessories, footwear, fragrances, Oyenuga Joshua, Sharpman, Lagos Nigeria, luxury fashion, menswear" />
+      <meta name="keywords" content="MagicStitch, fashion brand, custom clothing, tailored suits, accessories, footwear, fragrances, Oyenuga Joshua, Sharpman, Lagos Nigeria, luxury fashion, menswear" />
       <meta name="theme-color" content={PROJECT.themeColor} />
       <link rel="canonical" href={pageUrl} />
 
@@ -59,7 +59,7 @@ export default function SEOHead({
       <meta property="og:description" content={pageDescription} />
       <meta property="og:url" content={pageUrl} />
       <meta property="og:image" content={pageImage} />
-      <meta property="og:site_name" content="MagicHands by Sharpman" />
+      <meta property="og:site_name" content="MagicStitch by Sharpman" />
       <meta property="og:locale" content="en_US" />
 
       {/* Twitter Card */}

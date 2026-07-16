@@ -9,13 +9,13 @@ import WhatsAppFAB from "./ui/WhatsAppFAB";
 import Marquee from "./ui/Marquee";
 import Contact from "./ui/Contact";
 import Testimonials from "./ui/Testimonials";
-import Hero from "./magicHands/Hero";
+import Hero from "./magicStitch/Hero";
 import FAQ from "./ui/FAQ";
-import Gallery from "./magicHands/Gallery";
-import Collections from "./magicHands/Collections";
+import Gallery from "./magicStitch/Gallery";
+import Collections from "./magicStitch/Collections";
 import WhyUs from "./ui/WhyUs";
-import Configurator from "./magicHands/Configurator";
-import Process from "./magicHands/Process";
+import Configurator from "./magicStitch/Configurator";
+import Process from "./magicStitch/Process";
 
 const Home = () => {
   const [ready, setReady] = useState(false);

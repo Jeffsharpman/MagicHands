@@ -13,7 +13,7 @@ const FAQS = [
   ],
   [
     "What is your alteration policy?",
-    "Every MagicHands tailored piece includes free alterations for life. Bodies change over time — your clothes should always fit the way they do right now.",
+    "Every MagicStitch tailored piece includes free alterations for life. Bodies change over time — your clothes should always fit the way they do right now.",
   ],
   [
     "What materials do you use?",

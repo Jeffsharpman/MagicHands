@@ -112,7 +112,7 @@ function Contact() {
                 <div className="mx-auto h-8 w-8 rounded-full bg-gold-gradient animate-pulse-gold" />
 
                 <div className="mt-2 font-ui text-[10px] tracking-[0.3em] text-(--primary)">
-                  MAGIC HANDS ATELIER
+                  MAGIC STITCH ATELIER
                 </div>
               </div>
             </div>
