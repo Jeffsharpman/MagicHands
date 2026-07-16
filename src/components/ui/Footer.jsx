@@ -8,7 +8,7 @@ import NAV from "./NavItem";
 function Footer() {
   const handleNewsletterSubmit = (e) => {
     e.preventDefault();
-    alert("Welcome to the atelier list.");
+    alert("Welcome. You will receive production updates and collection drops.");
   };
 
   return (
@@ -20,8 +20,8 @@ function Footer() {
             <Logo />
 
             <p className="mt-5 max-w-sm text-fg/60">
-              A fashion brand built on quality-first principles — every piece
-              designed for fit, durability, and real-world use.
+              Custom-tailored clothing, accessories, footwear, and fragrances.
+              Every piece is built to your measurements — never mass-produced.
             </p>
 
             <div className="mt-6 flex items-center gap-3">
@@ -107,7 +107,7 @@ function Footer() {
             <Eyebrow as="div" className="mb-4">NEWSLETTER</Eyebrow>
 
             <p className="mb-3 text-sm text-fg/60">
-              Exclusive drops and atelier invitations.
+              Production updates, new collections, and atelier invitations.
             </p>
 
             <form
@@ -131,16 +131,7 @@ function Footer() {
         {/* Bottom Bar */}
         <div className="mt-14 flex flex-col items-center justify-between gap-3 border-t border-(--primary)/15 pt-6 md:flex-row">
           <div className="font-ui text-[10px] tracking-[0.3em] text-fg/40">
-            © {new Date().getFullYear()} MAGIC STITCH · PART OF THE{" "}
-            <a
-              href="https://sharpman.netlify.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-(--primary)/60 transition-colors hover:text-(--primary)"
-            >
-              SHARPMAN
-            </a>{" "}
-            PORTFOLIO
+            © {new Date().getFullYear()} MAGICSTITCH. ALL RIGHTS RESERVED.
           </div>
 
           <div className="font-ui text-[10px] tracking-[0.3em] text-fg/40">

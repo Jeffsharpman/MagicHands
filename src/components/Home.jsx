@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { SEOHead, JsonLd, LocalBusinessSchema, AboutDeveloper } from "./seo";
+import { SEOHead, JsonLd, OrganizationSchema, PersonSchema, AboutDeveloper } from "./seo";
 import LoadingScreen from "./ui/LoadingScreen";
 import ScrollProgress from "./ui/ScrollProgress";
 import CursorGlow from "./ui/CursorGlow";
@@ -32,7 +32,8 @@ const Home = () => {
     <div className="relative min-h-screen bg-surface text-fg">
       <SEOHead />
       <JsonLd />
-      <LocalBusinessSchema />
+      <OrganizationSchema />
+      <PersonSchema />
 
       <LoadingScreen done={ready} />
 

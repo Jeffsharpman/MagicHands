@@ -4,7 +4,7 @@ function WhatsAppFAB() {
       href="https://wa.me/2349070281022"
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Chat on WhatsApp"
+      aria-label="Quick order or question? Message us on WhatsApp"
       className="group fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-gold-gradient shadow-[var(--shadow-primary-glow-md)] animate-pulse-gold"
     >
       <svg
@@ -16,7 +16,7 @@ function WhatsAppFAB() {
       </svg>
 
       <span className="absolute right-16 whitespace-nowrap rounded-full glass-strong px-3 py-1.5 font-ui text-[10px] tracking-[0.2em] text-fg opacity-0 transition-opacity group-hover:opacity-100">
-        CHAT ON WHATSAPP
+        QUICK ORDER OR QUESTION?
       </span>
     </a>
   );

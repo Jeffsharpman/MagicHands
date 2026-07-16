@@ -54,7 +54,7 @@ function Nav() {
         <div className="hidden items-center gap-2 lg:flex">
           <ThemeToggle />
           <Button href="#contact" size="sm" shadow="glow-sm">
-            Book Appointment
+            Start Your Order
           </Button>
         </div>
 
@@ -123,7 +123,7 @@ function Nav() {
               ))}
 
               <Button href="#contact" size="md" className="mt-2 w-full justify-center" onClick={() => setOpen(false)}>
-                Book Appointment
+                Start Your Order
               </Button>
             </div>
           </motion.div>

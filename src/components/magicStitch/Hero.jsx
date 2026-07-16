@@ -66,7 +66,7 @@ function Hero() {
         <motion.div style={{ opacity }} className="text-center lg:text-left">
           {/* Hidden heading for SEO — reinforces brand entity */}
           <h1 className="sr-only">
-            MagicStitch — Premium Fashion Brand by Sharpman
+            MagicStitch — Custom-tailored clothing, accessories, footwear, and fragrances from Lagos, Nigeria
           </h1>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -76,7 +76,7 @@ function Hero() {
           >
             <Badge variant="border" size="md">
               <span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-(--primary) animate-pulse" />
-              FASHION BRAND · EST. 2019 · LAGOS
+              LAGOS, NIGERIA · EST. 2019
             </Badge>
           </motion.div>
 
@@ -90,7 +90,7 @@ function Hero() {
             }}
             className="font-display text-5xl leading-[0.95] tracking-tight md:text-7xl lg:text-[5.5rem]"
           >
-            <span className="block text-fg">Fashion Built</span>
+            <span className="block text-fg">Tailored for</span>
 
             <span
               className="block text-gold-gradient animate-shimmer"
@@ -102,7 +102,7 @@ function Hero() {
                 color: "transparent",
               }}
             >
-              for You.
+              How You Move.
             </span>
           </motion.h2>
 
@@ -112,9 +112,9 @@ function Hero() {
             transition={{ duration: 1, delay: 2.1 }}
             className="mt-6 max-w-xl text-base leading-relaxed text-fg/70 md:text-lg lg:mx-0 mx-auto"
           >
-            Custom-tailored clothing, accessories, footwear, and fragrances
-            designed for the moments that matter. Every piece is made with
-            precision — not mass-produced.
+            Custom-tailored clothing, accessories, footwear, and fragrances — each
+            piece built to your measurements, your occasion, your standard.
+            No mass production. No compromise.
           </motion.p>
 
           <motion.div
@@ -124,12 +124,12 @@ function Hero() {
             className="mt-9 flex flex-col items-center gap-4 sm:flex-row lg:justify-start justify-center"
           >
             <Button href="#contact" size="lg" shadow="glow-md" className="group relative overflow-hidden">
-              <span className="relative z-10">Book a Consultation</span>
+              <span className="relative z-10">Start Your Order</span>
               <span className="absolute inset-0 -translate-x-full bg-white/30 transition-transform duration-700 group-hover:translate-x-full" />
             </Button>
 
             <Button href="#collections" variant="outline" size="lg" arrow>
-              View Collections
+              Explore Collections
             </Button>
           </motion.div>
 
@@ -141,7 +141,7 @@ function Hero() {
           >
             {[
               ["1,200+", "Pieces delivered"],
-              ["6+", "Years of craft"],
+              ["7+", "Years of craft"],
               ["4.9★", "Client rating"],
             ].map(([n, l]) => (
               <div key={l} className="text-center lg:text-left">
@@ -198,7 +198,7 @@ function Hero() {
               <div className="relative h-full w-full overflow-hidden rounded-[2rem] gold-border shadow-[var(--shadow-primary-glow-xl)]">
                 <img
                   src={heroImage}
-                  alt="MagicStitch premium black double-breasted suit — designed by Oyenuga Joshua (Sharpman)"
+                  alt="MagicStitch custom-tailored double-breasted suit — precision-crafted from premium Italian wool"
                   className="h-full w-full object-cover"
                 />
 
@@ -240,10 +240,10 @@ function Hero() {
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 6, repeat: Infinity }}
               >
-                <Eyebrow size="sm">QUALITY GUARANTEE</Eyebrow>
+                <Eyebrow size="sm">BUILT TO LAST</Eyebrow>
 
                 <div className="font-display text-sm text-fg">
-                  Made to Last
+                  Free Alterations for Life
                 </div>
               </motion.div>
             </motion.div>

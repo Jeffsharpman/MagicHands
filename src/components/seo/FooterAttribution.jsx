@@ -4,7 +4,7 @@ export default function FooterAttribution() {
   return (
     <div className="mt-4 text-center">
       <p className="font-ui text-[9px] tracking-[0.25em] text-fg/30">
-        Engineered by{" "}
+        Designed & Developed by{" "}
         <a
           href={DEVELOPER.portfolio}
           target="_blank"
@@ -13,7 +13,7 @@ export default function FooterAttribution() {
         >
           {DEVELOPER.name}
         </a>{" "}
-        at{" "}
+        — Founder of{" "}
         <a
           href={DEVELOPER.portfolio}
           target="_blank"
@@ -21,8 +21,7 @@ export default function FooterAttribution() {
           className="text-(--primary)/60 underline-offset-2 transition-colors hover:text-(--primary) hover:underline"
         >
           Sharpman
-        </a>{" "}
-        — MagicStitch is a Sharpman product
+        </a>
       </p>
     </div>
   );

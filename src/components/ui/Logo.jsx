@@ -16,7 +16,7 @@ function Logo({ className = "" }) {
       >
         <img
           src={LogoImage}
-          alt="Magic Stitch Logo"
+          alt="MagicStitch logo"
           className="logo-img h-[96%] w-[96%] object-contain"
           draggable={false}
         />

@@ -58,7 +58,7 @@ function CollectionCard({ c, i }) {
       <div className="relative aspect-[4/5] overflow-hidden">
         <img
           src={c.img}
-          alt={`${c.title} — MagicStitch collection, designed by Oyenuga Joshua (Sharpman)`}
+          alt={`${c.title} — MagicStitch collection, custom-tailored from premium materials`}
           loading="lazy"
           width={800}
           height={1000}
@@ -104,7 +104,7 @@ function Collections() {
         <SectionHeader
           eyebrow="COLLECTIONS"
           title='Six Lines. <span class="text-gold-gradient italic">One Standard.</span>'
-          sub="From tailored clothing to fragrances, each line is built with the same attention to material and construction. The difference is in how it's designed to be used."
+          sub="From tailored clothing to fragrances — each line built with the same material selection, construction methods, and quality checks. The difference is in how each piece is designed to be used."
         />
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

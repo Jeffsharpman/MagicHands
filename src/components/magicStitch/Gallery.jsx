@@ -84,7 +84,7 @@ function Gallery() {
         <SectionHeader
           eyebrow="COLLECTION GALLERY"
           title='Craftsmanship in <span class="text-gold-gradient italic">Detail</span>'
-          sub="Each piece is made using traditional methods and premium materials — built under the Sharpman brand."
+          sub="Each piece is constructed using traditional methods and premium materials. Every item is made to order — built to your specifications."
         />
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -103,7 +103,7 @@ function Gallery() {
               <div className="relative aspect-[4/5] overflow-hidden">
                 <img
                   src={piece.img}
-                  alt={`${piece.title} — ${piece.category}, MagicStitch`}
+                  alt={`${piece.title} — ${piece.category}, MagicStitch custom-tailored`}
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-110"
                 />

@@ -71,7 +71,7 @@ function LoadingScreen({ done }) {
             }}
             className="mt-6 text-center font-ui text-[10px] tracking-[0.45em] uppercase text-(--primary)/60"
           >
-            ENGINEERED FOR THE MOMENTS THAT DEFINE YOU
+            PRECISION IN EVERY STITCH
           </motion.p>
         </motion.div>
       )}

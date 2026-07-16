@@ -61,9 +61,9 @@ function WhyUs() {
 
       <div className="relative mx-auto max-w-7xl px-6">
         <SectionHeader
-          eyebrow="WHY MAGIC STITCH"
+          eyebrow="WHY MAGICSTITCH"
           title='Why MagicStitch <span class="text-gold-gradient italic">Is Different</span>'
-          sub="Seven decisions that separate a well-made fashion brand from a well-marketed one. Built by Oyenuga Joshua under the Sharpman brand."
+          sub="Seven decisions that separate a well-made fashion brand from a well-marketed one. Designed and engineered by Oyenuga Joshua under the Sharpman brand."
         />
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">

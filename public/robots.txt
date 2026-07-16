@@ -1,0 +1,125 @@
+# =============================================================================
+# MagicStitch — Production Robots.txt
+# https://magicstitch.netlify.app/robots.txt
+# =============================================================================
+
+# --- Global Rules -----------------------------------------------------------
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /login/
+Disallow: /register/
+Disallow: /checkout/
+Disallow: /cart/
+Disallow: /account/
+Disallow: /settings/
+Disallow: /search?
+Disallow: /*.json$
+Disallow: /src/
+Disallow: /assets/
+
+# --- Googlebot (Search) -----------------------------------------------------
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /login/
+Disallow: /register/
+Disallow: /checkout/
+Disallow: /cart/
+Disallow: /account/
+Disallow: /settings/
+Disallow: /search?
+Disallow: /*.json$
+Disallow: /src/
+Disallow: /assets/
+
+# --- Bingbot ---------------------------------------------------------------
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /login/
+Disallow: /register/
+Disallow: /checkout/
+Disallow: /cart/
+Disallow: /account/
+Disallow: /settings/
+Disallow: /search?
+Disallow: /*.json$
+Disallow: /src/
+Disallow: /assets/
+
+# --- Social Crawlers (OG/Twitter previews) ----------------------------------
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+# --- AI / Scraping Bots — Block aggressive crawlers -------------------------
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Omgilibot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+# --- Aggressive / Unknown Scrapers — Block entirely -------------------------
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: Screaming Frog
+Disallow: /
+
+User-agent: MegaIndex
+Disallow: /
+
+# --- Sitemap Location -------------------------------------------------------
+Sitemap: https://magicstitch.netlify.app/sitemap.xml
+
+# --- Crawl-Delay (polite rate for non-Google/Bing bots) --------------------
+# Only applies to crawlers that respect Crawl-delay
+Crawl-delay: 10

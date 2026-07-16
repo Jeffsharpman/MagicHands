@@ -55,7 +55,7 @@ export default function AboutDeveloper() {
       />
 
       <div className="relative mx-auto max-w-4xl px-6 text-center">
-        <Eyebrow as="div" color="muted" className="mb-4">PRODUCT ENGINEER</Eyebrow>
+        <Eyebrow as="div" color="muted" className="mb-4">THE ENGINEER</Eyebrow>
 
         <h2 className="font-display text-3xl font-bold tracking-tight text-fg md:text-4xl">
           Oyenuga Joshua{" "}
@@ -63,26 +63,20 @@ export default function AboutDeveloper() {
         </h2>
 
         <p className="mx-auto mt-5 max-w-2xl text-fg/60 leading-relaxed">
-          <strong className="text-fg/80">Oyenuga Joshua</strong> is the
-          founder behind MagicStitch — a Full Stack Developer based in Ikorodu,
-          Lagos. MagicStitch is a fashion brand delivering custom-tailored
-          clothing, accessories, footwear, fragrances, and lifestyle products.
+          <strong className="text-fg/80">Oyenuga Joshua</strong> is a Full Stack Developer based in Lagos, Nigeria. He personally designed and developed MagicStitch — handling everything from product architecture to the codebase you are viewing now.
         </p>
 
         <p className="mx-auto mt-4 max-w-2xl text-fg/50 leading-relaxed">
-          <strong className="text-(--primary)">Sharpman</strong> is the
-          development brand that built this site — specializing in custom web
-          applications, e-commerce platforms, and digital experiences using
-          React, Laravel, and modern tooling.
+          MagicStitch is part of the <strong className="text-(--primary)">Sharpman</strong> software portfolio — a collection of web applications, e-commerce platforms, and digital products engineered under one brand. Sharpman specializes in React, Laravel, and modern web applications built for performance and long-term maintainability.
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
           <Button href={DEVELOPER.portfolio} target="_blank" rel="noopener noreferrer" size="md" arrow>
-            View the Sharpman Portfolio
+            Explore More by Sharpman
           </Button>
 
           <Button href={DEVELOPER.portfolio + "#projects"} target="_blank" rel="noopener noreferrer" variant="outline" size="md">
-            More Sharpman Projects
+            View the Sharpman Portfolio
           </Button>
         </div>
 

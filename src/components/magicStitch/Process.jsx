@@ -36,7 +36,7 @@ function Process() {
         <SectionHeader
           eyebrow="HOW IT WORKS"
           title='From Order to <span class="text-gold-gradient italic">Delivery</span>'
-          sub="Five steps. No shortcuts. Every stage is quality-checked before moving to the next."
+          sub="Five steps. No shortcuts. Every stage is quality-checked before moving to the next. Typical turnaround: 2–3 weeks."
         />
 
         <div className="relative">

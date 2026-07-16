@@ -5,7 +5,7 @@ import Eyebrow from "./Eyebrow";
 function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Thank you. Our atelier will be in touch within 24 hours.");
+    alert("Thank you. We will be in touch within 24 hours via WhatsApp or email.");
   };
 
   return (
@@ -22,7 +22,7 @@ function Contact() {
         <SectionHeader
           eyebrow="GET IN TOUCH"
           title='Start Your <span class="text-gold-gradient italic">Order</span>'
-          sub="Schedule a consultation or place a remote order. Every piece starts with a conversation about what you need."
+          sub="Schedule a consultation or place a remote order. We respond within 24 hours via WhatsApp or email."
         />
 
         <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr]">
@@ -45,6 +45,7 @@ function Contact() {
                     type={type}
                     name={name}
                     required
+                    placeholder={name === "occasion" ? "Wedding, graduation, boardroom..." : ""}
                     className="mt-2 w-full rounded-xl border border-(--primary)/20 bg-surface/40 px-4 py-3 text-fg outline-none transition-all focus:border-(--primary) focus:ring-2 focus:ring-(--primary)/30"
                   />
                 </div>
@@ -64,6 +65,7 @@ function Contact() {
 
                 <textarea
                   rows={4}
+                  placeholder="Tell us about the occasion, your style preferences, or any specific requirements..."
                   className="mt-2 w-full rounded-xl border border-(--primary)/20 bg-surface/40 px-4 py-3 text-fg outline-none focus:border-(--primary)"
                 />
               </div>
@@ -75,24 +77,41 @@ function Contact() {
           </form>
 
           {/* Contact Information */}
-          <div className="space-y-5">
-            {[
-              ["ATELIER", "By appointment only · Lagos, Nigeria"],
-              ["WHATSAPP", "+234 907 028 1022"],
-              ["TIKTOK", "@sharpman.dev"],
-              ["INSTAGRAM", "@sharpman_dev"],
-              ["HOURS", "Mon–Sat · 10:00 – 19:00"],
-            ].map(([title, value]) => (
-              <div key={title} className="glass rounded-2xl p-5">
-                <div className="font-ui text-[10px] tracking-[0.35em] text-(--primary)">
-                  {title}
-                </div>
+            <div className="space-y-5">
+              {[
+                ["ATELIER", "By appointment only · Lagos, Nigeria"],
+                ["WHATSAPP", "+234 907 028 1022"],
+                ["EMAIL", "buildwithsharpman@gmail.com"],
+                ["HOURS", "Mon–Fri · 9:00 – 18:00 WAT"],
+              ].map(([title, value]) => (
+                <div key={title} className="glass rounded-2xl p-5">
+                  <div className="font-ui text-[10px] tracking-[0.35em] text-(--primary)">
+                    {title}
+                  </div>
 
-                <div className="mt-1 font-display text-lg text-fg">
-                  {value}
+                  <div className="mt-1 font-display text-lg text-fg">
+                    {value}
+                  </div>
                 </div>
+              ))}
+
+              <div className="flex flex-wrap gap-2">
+                {[
+                  { label: "@sharpman_dev", href: "https://www.instagram.com/sharpman_dev" },
+                  { label: "@sharpman.dev", href: "https://www.tiktok.com/@sharpman.dev" },
+                  { label: "@sharpman_dev", href: "https://x.com/sharpman_dev" },
+                ].map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-full border border-(--primary)/20 bg-surface-card/60 px-4 py-2 font-ui text-[10px] tracking-[0.2em] text-fg/60 transition-all hover:border-(--primary)/50 hover:text-(--primary)"
+                  >
+                    {social.label}
+                  </a>
+                ))}
               </div>
-            ))}
 
             <div className="relative h-56 overflow-hidden rounded-2xl border border-(--primary)/20">
               <div

@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
-import SectionHeader from "../ui/SectionHeader";
-import Badge from "../ui/Badge";
-import Eyebrow from "../ui/Eyebrow";
-import Button from "../ui/Button";
+import SectionHeader from "../UI/SectionHeader";
+import Badge from "../UI/Badge";
+import Eyebrow from "../UI/Eyebrow";
+import Button from "../UI/Button";
 
 const FABRIC_COLORS = [
   {
@@ -80,9 +80,9 @@ function Configurator() {
       />
       <div className="relative mx-auto max-w-7xl px-6">
         <SectionHeader
-          eyebrow="3D STUDIO LAB"
-          title='Tailor Your <span class="text-gold-gradient italic">Silhouette</span>'
-          sub="Adjust your custom configurations below. Real-time changes map directly to our signature windowpane fabrics and luxury neckwear cuts."
+          eyebrow="INTERACTIVE STUDIO"
+          title='Configure Your <span class="text-gold-gradient italic">Look</span>'
+          sub="Select fabrics, neckwear, and pocket square styles below. Every configuration maps directly to our construction process — built to order, not off the shelf."
         />
 
         <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center">
@@ -488,7 +488,7 @@ function Configurator() {
 
             <div className="absolute left-5 top-5">
               <Badge variant="glass" size="md">
-                3D RENDER ENGINE
+                LIVE PREVIEW
               </Badge>
             </div>
             <div className="absolute right-5 top-5">
@@ -625,7 +625,7 @@ function Configurator() {
               arrow
               className="w-full justify-between"
             >
-              Order Custom Tailored Look
+              Order This Look
             </Button>
           </div>
         </div>
