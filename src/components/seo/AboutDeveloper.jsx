@@ -42,35 +42,35 @@ export default function AboutDeveloper() {
   return (
     <section
       id="developer"
-      className="relative overflow-hidden border-t border-(--gold)/10 bg-gradient-to-b from-[#0a0806] to-black py-20 md:py-28"
+      className="relative overflow-hidden border-t border-(--primary)/10 bg-gradient-to-b from-surface-card to-surface py-20 md:py-28"
     >
       <div
         className="absolute inset-0 opacity-30"
         style={{
           background:
-            "radial-gradient(ellipse at 50% 0%, rgba(212,175,55,0.08), transparent 60%)",
+            "radial-gradient(ellipse at 50% 0%, color-mix(in srgb, var(--primary) 8%, transparent), transparent 60%)",
         }}
       />
 
       <div className="relative mx-auto max-w-4xl px-6 text-center">
-        <div className="mb-4 font-ui text-[10px] tracking-[0.4em] text-(--gold)/60">
+        <div className="mb-4 font-ui text-[10px] tracking-[0.4em] text-(--primary)/60">
           PRODUCT ENGINEER
         </div>
 
-        <h2 className="font-display text-3xl font-bold tracking-tight text-white md:text-4xl">
+        <h2 className="font-display text-3xl font-bold tracking-tight text-fg md:text-4xl">
           Oyenuga Joshua{" "}
           <span className="text-gold-gradient italic">(Sharpman)</span>
         </h2>
 
-        <p className="mx-auto mt-5 max-w-2xl text-white/60 leading-relaxed">
-          <strong className="text-white/80">Oyenuga Joshua</strong> is the
+        <p className="mx-auto mt-5 max-w-2xl text-fg/60 leading-relaxed">
+          <strong className="text-fg/80">Oyenuga Joshua</strong> is the
           founder behind MagicHands — a Full Stack Developer based in Ikorodu,
           Lagos. MagicHands is a fashion brand delivering custom-tailored
           clothing, accessories, footwear, fragrances, and lifestyle products.
         </p>
 
-        <p className="mx-auto mt-4 max-w-2xl text-white/50 leading-relaxed">
-          <strong className="text-(--gold)">Sharpman</strong> is the
+        <p className="mx-auto mt-4 max-w-2xl text-fg/50 leading-relaxed">
+          <strong className="text-(--primary)">Sharpman</strong> is the
           development brand that built this site — specializing in custom web
           applications, e-commerce platforms, and digital experiences using
           React, Laravel, and modern tooling.
@@ -93,7 +93,7 @@ export default function AboutDeveloper() {
             href={DEVELOPER.portfolio + "#projects"}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-(--gold)/30 px-7 py-3.5 font-ui text-xs font-semibold uppercase tracking-[0.2em] text-(--gold) transition-all hover:bg-(--gold)/10"
+            className="inline-flex items-center gap-2 rounded-full border border-(--primary)/30 px-7 py-3.5 font-ui text-xs font-semibold uppercase tracking-[0.2em] text-(--primary) transition-all hover:bg-(--primary)/10"
           >
             More Sharpman Projects
           </a>
@@ -114,7 +114,7 @@ export default function AboutDeveloper() {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 rounded-full border border-(--gold)/20 bg-[#0a0806]/60 px-4 py-2 font-ui text-[10px] tracking-[0.2em] text-white/60 transition-all hover:border-(--gold)/50 hover:text-(--gold)"
+              className="flex items-center gap-1.5 rounded-full border border-(--primary)/20 bg-surface-card/60 px-4 py-2 font-ui text-[10px] tracking-[0.2em] text-fg/60 transition-all hover:border-(--primary)/50 hover:text-(--primary)"
             >
               {link.icon}
               {link.label}

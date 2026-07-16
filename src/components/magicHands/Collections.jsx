@@ -6,10 +6,6 @@ import cFootwear from "../../assets/collection-footwear.jpg";
 import cFragrance from "../../assets/collection-fragrance.jpg";
 import cTraditionalWear from "../../assets/collection-traditional.jpg";
 import cTuxedo from "../../assets/collection-tuxedo.jpg";
-import cExecutive from "../../assets/collection-executive.jpg";
-import cWedding from "../../assets/collection-wedding.jpg";
-import cConvocation from "../../assets/collection-convocation.jpg";
-
 const COLLECTIONS = [
   {
     title: "Tailored Clothing",
@@ -56,7 +52,7 @@ function CollectionCard({ c, i }) {
         ease: [0.16, 1, 0.3, 1],
       }}
       whileHover={{ y: -12 }}
-      className="group relative block overflow-hidden rounded-3xl border border-(--gold)/15 bg-[#0a0806] shadow-[var(--shadow-elegant)] transition-all duration-500 hover:border-(--gold)/60 hover:shadow-[0_40px_80px_-20px_rgba(212,175,55,0.35)]"
+      className="group relative block overflow-hidden rounded-3xl border border-(--primary)/15 bg-surface-card shadow-[var(--shadow-elegant)] transition-all duration-500 hover:border-(--primary)/60 hover:shadow-[var(--shadow-primary-hover)]"
     >
       <div className="relative aspect-[4/5] overflow-hidden">
         <img
@@ -68,34 +64,32 @@ function CollectionCard({ c, i }) {
           className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-110"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent opacity-90" />
-
         <div
           className="absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100"
           style={{
             background:
-              "radial-gradient(circle at 50% 100%, rgba(212,175,55,0.25), transparent 60%)",
+              "radial-gradient(circle at 50% 100%, color-mix(in srgb, var(--primary) 25%, transparent), transparent 60%)",
           }}
         />
 
-        <div className="absolute right-4 top-4 rounded-full glass px-3 py-1.5 font-ui text-[9px] tracking-[0.3em] text-(--gold)">
+        <div className="absolute right-4 top-4 rounded-full glass px-3 py-1.5 font-ui text-[9px] tracking-[0.3em] text-(--primary)">
           NEW
         </div>
       </div>
 
       <div className="relative p-6 md:p-7">
-        <h3 className="font-display text-2xl leading-tight text-white md:text-3xl">
+        <h3 className="font-display text-2xl leading-tight text-fg md:text-3xl">
           {c.title}
         </h3>
 
-        <p className="mt-2 text-sm text-white/60">{c.desc}</p>
+        <p className="mt-2 text-sm text-fg/60">{c.desc}</p>
 
         <div className="mt-5 flex items-center justify-between">
-          <span className="font-ui text-[10px] tracking-[0.3em] text-(--gold)">
+          <span className="font-ui text-[10px] tracking-[0.3em] text-(--primary)">
             EXPLORE →
           </span>
 
-          <span className="font-display text-sm text-white/40">Collection</span>
+          <span className="font-display text-sm text-fg/40">Collection</span>
         </div>
       </div>
     </motion.a>

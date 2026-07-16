@@ -44,7 +44,7 @@ function Process() {
             className="pointer-events-none absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 md:block"
             style={{
               background:
-                "linear-gradient(180deg, transparent, var(--gold) 30%, var(--gold) 70%, transparent)",
+                "linear-gradient(180deg, transparent, var(--primary) 30%, var(--primary) 70%, transparent)",
             }}
           />
 
@@ -80,15 +80,15 @@ function Process() {
                     {number}
                   </div>
 
-                  <h3 className="mt-3 font-display text-2xl text-white md:text-3xl">
+                  <h3 className="mt-3 font-display text-2xl text-fg md:text-3xl">
                     {title}
                   </h3>
 
-                  <p className="mt-3 text-white/60">{description}</p>
+                  <p className="mt-3 text-fg/60">{description}</p>
                 </div>
 
                 <div className="relative hidden items-center justify-center [direction:ltr] md:flex">
-                  <div className="relative h-16 w-16 rounded-full bg-gold-gradient shadow-[0_0_40px_rgba(212,175,55,0.6)] animate-pulse-gold">
+                  <div className="relative h-16 w-16 rounded-full bg-gold-gradient shadow-[0_0_40px_color-mix(in_srgb,var(--primary)_60%,transparent)] animate-pulse-gold">
                     <div className="absolute inset-2 rounded-full border border-black/40" />
                   </div>
                 </div>

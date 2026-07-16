@@ -1,11 +1,5 @@
 import { useState, useEffect } from "react";
-import {
-  SEOHead,
-  JsonLd,
-  LocalBusinessSchema,
-  AboutDeveloper,
-  FooterAttribution,
-} from "./seo";
+import { SEOHead, JsonLd, LocalBusinessSchema, AboutDeveloper } from "./seo";
 import LoadingScreen from "./ui/LoadingScreen";
 import ScrollProgress from "./ui/ScrollProgress";
 import CursorGlow from "./ui/CursorGlow";
@@ -19,7 +13,7 @@ import Hero from "./magicHands/Hero";
 import FAQ from "./ui/FAQ";
 import Gallery from "./magicHands/Gallery";
 import Collections from "./magicHands/Collections";
-import WhyUs from "./magicHands/WhyUs";
+import WhyUs from "./ui/WhyUs";
 import Configurator from "./magicHands/Configurator";
 import Process from "./magicHands/Process";
 
@@ -35,7 +29,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-black text-white">
+    <div className="relative min-h-screen bg-surface text-fg">
       <SEOHead />
       <JsonLd />
       <LocalBusinessSchema />

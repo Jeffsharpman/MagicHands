@@ -1,6 +1,14 @@
-import { Diamond, Heart, Ruler, Scissors, Shield, Sparkles, Timer } from "lucide-react";
+import {
+  Diamond,
+  Heart,
+  Ruler,
+  Scissors,
+  Shield,
+  Sparkles,
+  Timer,
+} from "lucide-react";
 import { motion } from "motion/react";
-import SectionHeader from "../ui/SectionHeader";
+import SectionHeader from "./SectionHeader";
 
 const WHY = [
   {
@@ -47,7 +55,7 @@ function WhyUs() {
         className="absolute inset-0 opacity-40"
         style={{
           background:
-            "radial-gradient(ellipse at center, rgba(212,175,55,0.08), transparent 60%)",
+            "radial-gradient(ellipse at center, color-mix(in srgb, var(--primary) 8%, transparent), transparent 60%)",
         }}
       />
 
@@ -69,25 +77,23 @@ function WhyUs() {
                 duration: 0.7,
                 delay: (index % 4) * 0.08,
               }}
-              className="group relative overflow-hidden rounded-2xl border border-(--gold)/15 bg-[#0a0806]/70 p-7 transition-all hover:-translate-y-1 hover:border-(--gold)/50"
+              className="group relative overflow-hidden rounded-2xl border border-(--primary)/15 bg-surface-card/70 p-7 transition-all hover:-translate-y-1 hover:border-(--primary)/50"
             >
               <div
                 className="absolute -right-6 -top-6 h-24 w-24 rounded-full opacity-0 blur-2xl transition-opacity group-hover:opacity-100"
                 style={{
-                  background: "var(--gradient-gold)",
+                  background: "var(--gradient-primary)",
                 }}
               />
 
               <div className="relative">
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full border border-(--gold)/40 bg-black text-gold-gradient transition-transform group-hover:rotate-45 group-hover:scale-110">
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full border border-(--primary)/40 bg-surface text-(--primary) transition-transform group-hover:rotate-45 group-hover:scale-110">
                   {item.icon}
                 </div>
 
-                <h3 className="font-display text-xl text-white">
-                  {item.title}
-                </h3>
+                <h3 className="font-display text-xl text-fg">{item.title}</h3>
 
-                <p className="mt-2 text-sm text-white/60">{item.desc}</p>
+                <p className="mt-2 text-sm text-fg/60">{item.desc}</p>
               </div>
             </motion.div>
           ))}

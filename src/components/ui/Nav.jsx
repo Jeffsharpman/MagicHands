@@ -1,6 +1,7 @@
-import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion } from "motion/react"; 
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
 import Logo from "./Logo";
+import ThemeToggle from "./ThemeToggle";
 
 const NAV = [
   ["Home", "#home"],
@@ -30,66 +31,87 @@ function Nav() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled ? "py-3" : "py-5"
+        scrolled
+          ? "px-3 py-2 sm:px-4 lg:px-8"
+          : "px-3 py-3 sm:px-4 lg:px-0 lg:py-5"
       }`}
     >
       <div
-        className={`mx-auto flex max-w-7xl items-center justify-between px-5 md:px-10 ${
+        className={`mx-auto flex max-w-7xl items-center justify-between gap-4 ${
           scrolled
-            ? "glass-strong rounded-full border border-(--gold)/20 mx-4 md:mx-8 px-5"
-            : ""
+            ? "rounded-full border border-(--primary)/20 bg-surface/80 px-4 py-2 backdrop-blur-xl"
+            : "px-2 sm:px-4 lg:px-8"
         }`}
       >
+        {/* Logo */}
         <a href="#home" className="shrink-0">
-          <Logo />
+          <Logo className="origin-left scale-75 sm:scale-90 lg:scale-100" />
         </a>
 
-        <nav className="hidden items-center gap-8 lg:flex">
+        {/* Desktop Navigation */}
+        <nav className="hidden flex-1 items-center justify-center gap-5 xl:gap-8 lg:flex">
           {NAV.map(([label, href]) => (
             <a
               key={href}
               href={href}
-              className="group relative font-ui text-[12px] tracking-[0.2em] text-white/80 transition-colors hover:text-(--gold)"
+              className="group relative font-ui text-[11px] uppercase tracking-[0.14em] text-fg/80 transition-colors duration-300 hover:text-(--primary)"
             >
-              {label.toUpperCase()}
+              {label}
 
               <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold-gradient transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
         </nav>
 
-        <a
-          href="#contact"
-          className="hidden items-center gap-2 rounded-full bg-gold-gradient px-5 py-2.5 font-ui text-[11px] font-semibold uppercase tracking-[0.2em] text-black shadow-[0_10px_30px_-10px_rgba(212,175,55,0.6)] transition-transform hover:scale-[1.03] lg:inline-flex"
-        >
-          Book Appointment
-        </a>
+        {/* Desktop CTA */}
+        <div className="hidden items-center gap-2 lg:flex">
+          <ThemeToggle />
+          <a
+            href="#contact"
+            className="inline-flex items-center rounded-full bg-gold-gradient px-4 xl:px-5 py-2 font-ui text-[10px] xl:text-[11px] font-semibold uppercase tracking-[0.15em] text-black shadow-[var(--shadow-primary-glow-sm)] transition duration-300 hover:scale-105"
+          >
+            Book Appointment
+          </a>
+        </div>
 
-        <button
-          onClick={() => setOpen((v) => !v)}
-          className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-full border border-(--gold)/30 lg:hidden"
-          aria-label="Menu"
-        >
-          <span
-            className={`h-px w-5 bg-(--gold) transition-transform ${
-              open ? "translate-y-[3px] rotate-45" : ""
-            }`}
-          />
+        {/* Mobile Menu */}
+        <div className="flex items-center gap-2 lg:hidden">
+          <ThemeToggle />
+          <button
+            onClick={() => setOpen((v) => !v)}
+            aria-label="Toggle Navigation"
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-(--primary)/30"
+          >
+            <div className="relative h-4 w-5">
+              <span
+                className={`absolute left-0 top-1/2 h-[2px] w-full -translate-y-2 bg-(--primary) transition-all duration-300 ${
+                  open ? "translate-y-0 rotate-45" : ""
+                }`}
+              />
 
-          <span
-            className={`h-px w-5 bg-(--gold) transition-transform ${
-              open ? "-translate-y-[3px] -rotate-45" : ""
-            }`}
-          />
-        </button>
+              <span
+                className={`absolute left-0 top-1/2 h-[2px] w-full bg-(--primary) transition-all duration-300 ${
+                  open ? "opacity-0" : ""
+                }`}
+              />
+
+              <span
+                className={`absolute left-0 top-1/2 h-[2px] w-full translate-y-2 bg-(--primary) transition-all duration-300 ${
+                  open ? "translate-y-0 -rotate-45" : ""
+                }`}
+              />
+            </div>
+          </button>
+        </div>
       </div>
 
+      {/* Mobile Navigation */}
       <AnimatePresence>
         {open && (
           <motion.div
             initial={{
               opacity: 0,
-              y: -12,
+              y: -15,
             }}
             animate={{
               opacity: 1,
@@ -97,26 +119,29 @@ function Nav() {
             }}
             exit={{
               opacity: 0,
-              y: -12,
+              y: -15,
             }}
-            className="mx-4 mt-3 rounded-2xl glass-strong p-6 lg:hidden"
+            transition={{
+              duration: 0.3,
+            }}
+            className="mx-3 mt-3 rounded-3xl border border-(--primary)/15 bg-surface/90 p-6 shadow-xl backdrop-blur-xl lg:hidden"
           >
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-5">
               {NAV.map(([label, href]) => (
                 <a
                   key={href}
                   href={href}
                   onClick={() => setOpen(false)}
-                  className="font-ui text-sm tracking-[0.2em] text-white/80 hover:text-(--gold)"
+                  className="font-ui text-sm uppercase tracking-[0.18em] text-fg/80 transition-colors hover:text-(--primary)"
                 >
-                  {label.toUpperCase()}
+                  {label}
                 </a>
               ))}
 
               <a
                 href="#contact"
                 onClick={() => setOpen(false)}
-                className="mt-2 inline-flex justify-center rounded-full bg-gold-gradient px-5 py-3 font-ui text-xs font-semibold uppercase tracking-[0.2em] text-black"
+                className="mt-2 inline-flex justify-center rounded-full bg-gold-gradient px-5 py-3 font-ui text-xs font-semibold uppercase tracking-[0.18em] text-black transition hover:scale-[1.02]"
               >
                 Book Appointment
               </a>

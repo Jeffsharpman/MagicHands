@@ -14,7 +14,7 @@ function Marquee() {
   ];
 
   return (
-    <div className="relative overflow-hidden border-y border-(--gold)/20 bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.06),transparent_70%)] py-8">
+    <div className="relative overflow-hidden border-y border-(--primary)/20 bg-[radial-gradient(ellipse_at_center,color-mix(in_srgb,var(--primary)_6%,transparent),transparent_70%)] py-8">
       <div className="flex animate-marquee gap-16 whitespace-nowrap">
         {[...items, ...items, ...items].map((item, index) => (
           <div key={index} className="flex items-center gap-16">
@@ -22,7 +22,7 @@ function Marquee() {
               {item}
             </span>
 
-            <Sparkles className="h-5 w-5 text-(--gold)/50" />
+            <Sparkles className="h-5 w-5 text-(--primary)/50" />
           </div>
         ))}
       </div>

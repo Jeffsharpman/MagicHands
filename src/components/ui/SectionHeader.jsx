@@ -12,7 +12,7 @@ function SectionHeader({ eyebrow, title, sub }) {
       >
         <span className="h-px w-8 bg-gold-gradient" />
 
-        <span className="font-ui text-[10px] tracking-[0.4em] text-(--gold)">
+        <span className="font-ui text-[10px] tracking-[0.4em] text-(--primary)">
           {eyebrow}
         </span>
 
@@ -37,7 +37,7 @@ function SectionHeader({ eyebrow, title, sub }) {
             duration: 0.9,
             delay: 0.15,
           }}
-          className="mt-5 text-white/60 md:text-lg"
+          className="mt-5 text-fg/60 md:text-lg"
         >
           {sub}
         </motion.p>

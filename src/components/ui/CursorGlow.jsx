@@ -27,7 +27,7 @@ function CursorGlow() {
       className="pointer-events-none fixed left-0 top-0 z-40 h-[400px] w-[400px] rounded-full opacity-40 mix-blend-screen blur-3xl"
       style={{
         background:
-          "radial-gradient(circle, rgba(212,175,55,0.4), transparent 60%)",
+          "radial-gradient(circle, color-mix(in srgb, var(--primary) 40%, transparent), transparent 60%)",
       }}
     />
   );

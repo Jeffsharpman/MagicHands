@@ -21,8 +21,8 @@ function Particles() {
               top: "-5%",
               width: item.size,
               height: item.size,
-              background: "radial-gradient(circle, #F5E6A7, transparent 70%)",
-              boxShadow: "0 0 8px rgba(212, 175, 55, 0.7)",
+              background: "radial-gradient(circle, var(--primary), transparent 70%)",
+              boxShadow: "0 0 12px color-mix(in srgb, var(--primary) 80%, transparent)",
               animation: `fall ${item.dur}s linear ${item.delay}s infinite`,
             }}
           />

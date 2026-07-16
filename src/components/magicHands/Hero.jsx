@@ -44,7 +44,7 @@ function Hero() {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 80% 60% at 50% 40%, rgba(212,175,55,0.15), transparent 70%), radial-gradient(ellipse at bottom, #0a0803 0%, #000 60%)",
+            "radial-gradient(ellipse 80% 60% at 50% 40%, color-mix(in srgb, var(--primary) 15%, transparent), transparent 70%), radial-gradient(ellipse at bottom, var(--surface-deep) 0%, var(--surface) 60%)",
         }}
       />
 
@@ -52,7 +52,7 @@ function Hero() {
         className="absolute inset-x-0 bottom-0 h-1/2 opacity-40"
         style={{
           background:
-            "linear-gradient(to top, rgba(139,115,40,0.15), transparent)",
+            "linear-gradient(to top, color-mix(in srgb, var(--primary-deep) 15%, transparent), transparent)",
         }}
       />
 
@@ -69,11 +69,11 @@ function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 1.6 }}
-            className="mb-6 inline-flex items-center gap-3 rounded-full border border-(--gold)/30 bg-white/[0.03] px-4 py-1.5"
+            className="mb-6 inline-flex items-center gap-3 rounded-full border border-(--primary)/30 bg-white/[0.03] px-4 py-1.5"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-(--gold) animate-pulse" />
+            <span className="h-1.5 w-1.5 rounded-full bg-(--primary) animate-pulse" />
 
-            <span className="font-ui text-[10px] tracking-[0.35em] text-(--gold)">
+            <span className="font-ui text-[10px] tracking-[0.35em] text-(--primary)">
               FASHION BRAND · EST. 2019 · LAGOS
             </span>
           </motion.div>
@@ -88,13 +88,13 @@ function Hero() {
             }}
             className="font-display text-5xl leading-[0.95] tracking-tight md:text-7xl lg:text-[5.5rem]"
           >
-            <span className="block text-white">Fashion Built</span>
+            <span className="block text-fg">Fashion Built</span>
 
             <span
               className="block text-gold-gradient animate-shimmer"
               style={{
                 backgroundImage:
-                  "linear-gradient(90deg,#8B7328 0%,#F5E6A7 40%,#D4AF37 60%,#8B7328 100%)",
+                  "linear-gradient(90deg, var(--primary-deep) 0%, var(--primary-soft) 40%, var(--primary) 60%, var(--primary-deep) 100%)",
                 WebkitBackgroundClip: "text",
                 backgroundClip: "text",
                 color: "transparent",
@@ -108,7 +108,7 @@ function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 2.1 }}
-            className="mt-6 max-w-xl text-base leading-relaxed text-white/70 md:text-lg lg:mx-0 mx-auto"
+            className="mt-6 max-w-xl text-base leading-relaxed text-fg/70 md:text-lg lg:mx-0 mx-auto"
           >
             Custom-tailored clothing, accessories, footwear, and fragrances
             designed for the moments that matter. Every piece is made with
@@ -123,7 +123,7 @@ function Hero() {
           >
             <a
               href="#contact"
-              className="group relative overflow-hidden rounded-full bg-gold-gradient px-8 py-4 font-ui text-xs font-semibold uppercase tracking-[0.25em] text-black shadow-[0_20px_50px_-15px_rgba(212,175,55,0.7)] transition-transform hover:scale-[1.04]"
+              className="group relative overflow-hidden rounded-full bg-gold-gradient px-8 py-4 font-ui text-xs font-semibold uppercase tracking-[0.25em] text-black shadow-[var(--shadow-primary-glow-md)] transition-transform hover:scale-[1.04]"
             >
               <span className="relative z-10">Book a Consultation</span>
 
@@ -132,7 +132,7 @@ function Hero() {
 
             <a
               href="#collections"
-              className="group inline-flex items-center gap-2 rounded-full border border-(--gold)/40 px-8 py-4 font-ui text-xs font-semibold uppercase tracking-[0.25em] text-(--gold) transition-colors hover:bg-(--gold)/10"
+              className="group inline-flex items-center gap-2 rounded-full border border-(--primary)/40 px-8 py-4 font-ui text-xs font-semibold uppercase tracking-[0.25em] text-(--primary) transition-colors hover:bg-(--primary)/10"
             >
               View Collections
               <span className="transition-transform group-hover:translate-x-1">
@@ -145,7 +145,7 @@ function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 2.6, duration: 1 }}
-            className="mt-14 grid grid-cols-3 gap-6 border-t border-(--gold)/15 pt-6 max-w-md lg:mx-0 mx-auto"
+            className="mt-14 grid grid-cols-3 gap-6 border-t border-(--primary)/15 pt-6 max-w-md lg:mx-0 mx-auto"
           >
             {[
               ["1,200+", "Pieces delivered"],
@@ -157,7 +157,7 @@ function Hero() {
                   {n}
                 </div>
 
-                <div className="mt-1 font-ui text-[10px] tracking-[0.2em] text-white/50">
+                <div className="mt-1 font-ui text-[10px] tracking-[0.2em] text-fg/50">
                   {l.toUpperCase()}
                 </div>
               </div>
@@ -181,11 +181,11 @@ function Hero() {
             className="absolute left-1/2 top-1/2 h-[95%] w-[90%] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-70 blur-3xl"
             style={{
               background:
-                "radial-gradient(circle, rgba(212,175,55,0.35), transparent 65%)",
+                "radial-gradient(circle, color-mix(in srgb, var(--primary) 35%, transparent), transparent 65%)",
             }}
           />
 
-          <div className="absolute bottom-2 left-1/2 h-8 w-72 -translate-x-1/2 rounded-full border border-(--gold)/40 opacity-70 blur-[1px]" />
+          <div className="absolute bottom-2 left-1/2 h-8 w-72 -translate-x-1/2 rounded-full border border-(--primary)/40 opacity-70 blur-[1px]" />
 
           <div className="absolute bottom-4 left-1/2 h-2 w-56 -translate-x-1/2 rounded-full bg-gold-gradient opacity-30 blur-md" />
 
@@ -203,28 +203,26 @@ function Hero() {
                 damping: 20,
               }}
             >
-              <div className="relative h-full w-full overflow-hidden rounded-[2rem] gold-border shadow-[0_40px_100px_-20px_rgba(212,175,55,0.4)]">
+              <div className="relative h-full w-full overflow-hidden rounded-[2rem] gold-border shadow-[var(--shadow-primary-glow-xl)]">
                 <img
                   src={heroImage}
                   alt="MagicHands premium black double-breasted suit — designed by Oyenuga Joshua (Sharpman)"
                   className="h-full w-full object-cover"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
-
                 <div className="absolute inset-x-6 bottom-6 flex items-end justify-between">
                   <div>
-                    <div className="font-ui text-[10px] tracking-[0.35em] text-(--gold)/80">
+                    <div className="font-ui text-[10px] tracking-[0.35em] text-(--primary)/80">
                       SIGNATURE COLLECTION
                     </div>
 
-                    <div className="font-display text-xl text-white">
+                    <div className="font-display text-xl text-fg">
                       Onyx Double-Breasted
                     </div>
                   </div>
 
                   <div className="glass rounded-xl px-3 py-2 text-right">
-                    <div className="font-ui text-[10px] tracking-[0.2em] text-white/60">
+                    <div className="font-ui text-[10px] tracking-[0.2em] text-fg/60">
                       FROM
                     </div>
 
@@ -240,11 +238,11 @@ function Hero() {
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 5, repeat: Infinity }}
               >
-                <div className="font-ui text-[9px] tracking-[0.3em] text-(--gold)">
+                <div className="font-ui text-[9px] tracking-[0.3em] text-(--primary)">
                   PREMIUM MATERIALS
                 </div>
 
-                <div className="font-display text-sm text-white">
+                <div className="font-display text-sm text-fg">
                   Italian & English Mills
                 </div>
               </motion.div>
@@ -254,11 +252,11 @@ function Hero() {
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 6, repeat: Infinity }}
               >
-                <div className="font-ui text-[9px] tracking-[0.3em] text-(--gold)">
+                <div className="font-ui text-[9px] tracking-[0.3em] text-(--primary)">
                   QUALITY GUARANTEE
                 </div>
 
-                <div className="font-display text-sm text-white">
+                <div className="font-display text-sm text-fg">
                   Made to Last
                 </div>
               </motion.div>
@@ -274,12 +272,12 @@ function Hero() {
         transition={{ delay: 3 }}
         className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <span className="font-ui text-[10px] tracking-[0.4em] text-white/40">
+        <span className="font-ui text-[10px] tracking-[0.4em] text-fg/40">
           SCROLL
         </span>
 
         <motion.div
-          className="h-8 w-px bg-gradient-to-b from-(--gold) to-transparent"
+          className="h-8 w-px bg-gradient-to-b from-(--primary) to-transparent"
           animate={{ scaleY: [1, 0.4, 1] }}
           transition={{
             duration: 2,

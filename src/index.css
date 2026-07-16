@@ -3,119 +3,191 @@
 
 @source "../src";
 
+/* ================================================================
+   REUSABLE THEME SYSTEM
+   Change --primary / --secondary to rebrand for any project.
+   Toggle light/dark via .dark class or prefers-color-scheme.
+   ================================================================ */
+
 @theme inline {
+  /* === Typography === */
+  --font-display: "Playfair Display", serif;
+  --font-body: "Poppins", sans-serif;
+  --font-ui: "Montserrat", sans-serif;
+
+  /* === Border Radius === */
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
+
+  /* === Brand Colors → Tailwind Utilities === */
   --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-soft: var(--primary-soft);
+  --color-primary-deep: var(--primary-deep);
+  --color-primary-amber: var(--primary-amber);
   --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-gold: var(--gold);
-  --color-gold-soft: var(--gold-soft);
-  --color-gold-deep: var(--gold-deep);
-  --color-onyx: var(--onyx);
-  --font-display: "Playfair Display", serif;
-  --font-body: "Poppins", sans-serif;
-  --font-ui: "Montserrat", sans-serif;
+  --color-secondary-soft: var(--secondary-soft);
+
+  /* === Surface / Background → Tailwind Utilities === */
+  --color-surface: var(--surface);
+  --color-surface-card: var(--surface-card);
+  --color-surface-deep: var(--surface-deep);
+  --color-surface-elevated: var(--surface-elevated);
+
+  /* === Text → Tailwind Utilities === */
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+
+  /* === Legacy Compat (safe to remove later) === */
+  --color-background: var(--surface);
+  --color-foreground: var(--fg);
+  --color-gold: var(--primary);
+  --color-gold-soft: var(--primary-soft);
+  --color-gold-deep: var(--primary-deep);
+  --color-onyx: var(--surface);
+  --color-onyx-card: var(--surface-card);
 }
 
+/* ================================================================
+   LIGHT MODE (default)
+   ================================================================ */
 :root {
+  color-scheme: light dark;
   --radius: 0.75rem;
-  --background: oklch(0 0 0);
-  --foreground: oklch(1 0 0);
-  --card: oklch(0.14 0.005 60);
-  --card-foreground: oklch(1 0 0);
-  --popover: oklch(0.14 0.005 60);
-  --popover-foreground: oklch(1 0 0);
-  --primary: oklch(0.78 0.14 85);
-  --primary-foreground: oklch(0.08 0.005 60);
-  --secondary: oklch(0.18 0.005 60);
-  --secondary-foreground: oklch(1 0 0);
-  --muted: oklch(0.16 0.005 60);
-  --muted-foreground: oklch(0.7 0.02 80);
-  --accent: oklch(0.88 0.11 90);
-  --accent-foreground: oklch(0.08 0.005 60);
-  --destructive: oklch(0.6 0.22 25);
-  --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.25 0.03 85 / 40%);
-  --input: oklch(0.2 0.01 60);
-  --ring: oklch(0.78 0.14 85);
-  --gold: #D4AF37;
-  --gold-soft: #F5E6A7;
-  --gold-deep: #8B7328;
-  --onyx: #0a0a0a;
 
-  --gradient-gold: linear-gradient(135deg, #F5E6A7 0%, #D4AF37 45%, #8B7328 100%);
-  --gradient-gold-text: linear-gradient(180deg, #F5E6A7 0%, #D4AF37 55%, #A8862B 100%);
-  --gradient-dark: radial-gradient(ellipse at top, #1a1408 0%, #000 60%);
-  --shadow-gold: 0 20px 60px -20px rgba(212, 175, 55, 0.5);
-  --shadow-elegant: 0 30px 80px -30px rgba(0, 0, 0, 0.8);
+  /* Brand — override these to rebrand */
+  --primary: #D4AF37;
+  --primary-soft: #F5E6A7;
+  --primary-deep: #8B7328;
+  --primary-amber: #A8862B;
+  --secondary: #2c3e6b;
+  --secondary-soft: #5b7cc9;
+
+  /* Surfaces — warm mid-tone grays */
+  --surface: #d4d2cf;
+  --surface-card: #ddd9d4;
+  --surface-deep: #c5c2bd;
+  --surface-elevated: #d8d5d0;
+
+  /* Text */
+  --fg: #1a1a1a;
+  --fg-muted: #6b6b6b;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--primary-soft) 0%, var(--primary) 45%, var(--primary-deep) 100%);
+  --gradient-primary-text: linear-gradient(180deg, var(--primary-soft) 0%, var(--primary) 55%, var(--primary-amber) 100%);
+  --gradient-page: linear-gradient(180deg, var(--surface) 0%, var(--surface-deep) 100%);
+
+  /* Shadows */
+  --shadow-elevated: 0 30px 80px -30px rgba(0, 0, 0, 0.15);
+  --shadow-primary-glow-sm: 0 10px 30px -10px color-mix(in srgb, var(--primary) 60%, transparent);
+  --shadow-primary-glow-md: 0 20px 50px -15px color-mix(in srgb, var(--primary) 70%, transparent);
+  --shadow-primary-glow-lg: 0 20px 60px -20px color-mix(in srgb, var(--primary) 50%, transparent);
+  --shadow-primary-glow-xl: 0 40px 100px -20px color-mix(in srgb, var(--primary) 40%, transparent);
+  --shadow-primary-hover: 0 40px 80px -20px color-mix(in srgb, var(--primary) 35%, transparent);
+  --shadow-primary-button: 0 20px 50px -15px color-mix(in srgb, var(--primary) 60%, transparent);
 }
 
+/* ================================================================
+   DARK MODE
+   ================================================================ */
+.dark,
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Surfaces */
+  --surface: #0a0a0a;
+  --surface-card: #0a0806;
+  --surface-deep: #0a0803;
+  --surface-elevated: #1a1408;
+
+  /* Text */
+  --fg: #ffffff;
+  --fg-muted: rgba(255, 255, 255, 0.6);
+
+  /* Shadows */
+  --shadow-elevated: 0 30px 80px -30px rgba(0, 0, 0, 0.8);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light):not([data-theme="light"]) {
+    color-scheme: dark;
+    --surface: #0a0a0a;
+    --surface-card: #0a0806;
+    --surface-deep: #0a0803;
+    --surface-elevated: #1a1408;
+    --fg: #ffffff;
+    --fg-muted: rgba(255, 255, 255, 0.6);
+    --shadow-elevated: 0 30px 80px -30px rgba(0, 0, 0, 0.8);
+  }
+}
+
+/* ================================================================
+   BASE STYLES
+   ================================================================ */
 @layer base {
-  * { border-color: var(--color-border); }
+  * { border-color: var(--border); }
   html { scroll-behavior: smooth; }
   body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
+    background-color: var(--surface);
+    color: var(--fg);
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
   h1, h2, h3, h4, h5 { font-family: var(--font-display); letter-spacing: -0.01em; }
 
-  ::selection { background: var(--gold); color: #000; }
+  ::selection { background: var(--primary); color: #000; }
+
+  /* Logo: darken container in light mode so white logo elements are visible */
+  html:not(.dark) .logo-img {
+    filter: brightness(0.35) saturate(0.5) contrast(1.2);
+  }
 
   ::-webkit-scrollbar { width: 8px; }
-  ::-webkit-scrollbar-track { background: #000; }
-  ::-webkit-scrollbar-thumb { background: var(--gradient-gold); border-radius: 4px; }
+  ::-webkit-scrollbar-track { background: var(--surface); }
+  ::-webkit-scrollbar-thumb { background: var(--gradient-primary); border-radius: 4px; }
 }
 
+/* ================================================================
+   UTILITIES
+   ================================================================ */
 @utility text-gold-gradient {
-  background: var(--gradient-gold-text);
+  background: var(--gradient-primary-text);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
 @utility bg-gold-gradient {
-  background: var(--gradient-gold);
+  background: var(--gradient-primary);
 }
 
 @utility glass {
-  background: rgba(20, 15, 5, 0.4);
+  background: color-mix(in srgb, var(--surface-card) 40%, transparent);
   backdrop-filter: blur(18px) saturate(140%);
   -webkit-backdrop-filter: blur(18px) saturate(140%);
-  border: 1px solid rgba(212, 175, 55, 0.18);
+  border: 1px solid color-mix(in srgb, var(--primary) 18%, transparent);
 }
 
 @utility glass-strong {
-  background: rgba(10, 8, 3, 0.75);
+  background: color-mix(in srgb, var(--surface-card) 75%, transparent);
   backdrop-filter: blur(24px) saturate(160%);
   -webkit-backdrop-filter: blur(24px) saturate(160%);
-  border: 1px solid rgba(212, 175, 55, 0.25);
+  border: 1px solid color-mix(in srgb, var(--primary) 25%, transparent);
 }
 
 @utility gold-border {
   border: 1px solid transparent;
   background:
-    linear-gradient(#0a0a0a, #0a0a0a) padding-box,
-    var(--gradient-gold) border-box;
+    linear-gradient(var(--surface-card), var(--surface-card)) padding-box,
+    var(--gradient-primary) border-box;
 }
 
+/* ================================================================
+   KEYFRAMES
+   ================================================================ */
 @keyframes shimmer {
   0% { background-position: -200% center; }
   100% { background-position: 200% center; }
@@ -129,8 +201,8 @@
   to { transform: rotateY(360deg); }
 }
 @keyframes pulse-gold {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(212,175,55,0.5); }
-  50% { box-shadow: 0 0 40px 10px rgba(212,175,55,0); }
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--primary) 50%, transparent); }
+  50% { box-shadow: 0 0 40px 10px color-mix(in srgb, var(--primary) 0%, transparent); }
 }
 @keyframes marquee {
   from { transform: translateX(0); }

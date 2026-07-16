@@ -54,9 +54,9 @@ function Testimonials() {
       </div>
 
       <div className="relative">
-        <div className="absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-black to-transparent" />
+        <div className="absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-surface to-transparent" />
 
-        <div className="absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-black to-transparent" />
+        <div className="absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-surface to-transparent" />
 
         <div
           className="flex animate-marquee gap-6 px-6"
@@ -68,7 +68,7 @@ function Testimonials() {
               className="w-[340px] shrink-0 rounded-3xl glass p-7"
             >
               <div
-                className="mb-3 flex gap-0.5 text-(--gold)"
+                className="mb-3 flex gap-0.5 text-(--primary)"
                 aria-label="5 out of 5 stars"
               >
                 {[...Array(5)].map((_, i) => (
@@ -76,21 +76,21 @@ function Testimonials() {
                 ))}
               </div>
 
-              <p className="leading-relaxed text-white/80">
+              <p className="leading-relaxed text-fg/80">
                 "{testimonial.text}"
               </p>
 
-              <div className="mt-5 flex items-center gap-3 border-t border-(--gold)/15 pt-4">
+              <div className="mt-5 flex items-center gap-3 border-t border-(--primary)/15 pt-4">
                 <div className="flex h-11 w-11 items-center justify-center rounded-full bg-gold-gradient font-display text-sm font-bold text-black">
                   {testimonial.init}
                 </div>
 
                 <div>
-                  <div className="font-display text-white">
+                  <div className="font-display text-fg">
                     {testimonial.name}
                   </div>
 
-                  <div className="font-ui text-[10px] tracking-[0.2em] text-white/50">
+                  <div className="font-ui text-[10px] tracking-[0.2em] text-fg/50">
                     {testimonial.role.toUpperCase()}
                   </div>
                 </div>

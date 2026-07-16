@@ -97,7 +97,7 @@ function Gallery() {
                 duration: 0.7,
                 delay: (index % 3) * 0.08,
               }}
-              className="group relative overflow-hidden rounded-2xl border border-(--gold)/15 bg-[#0a0806]"
+              className="group relative overflow-hidden rounded-2xl border border-(--primary)/15 bg-surface-card"
             >
               <div className="relative aspect-[4/5] overflow-hidden">
                 <img
@@ -107,23 +107,21 @@ function Gallery() {
                   className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-110"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80" />
-
-                <div className="absolute left-3 top-3 rounded-full bg-black/60 px-3 py-1 font-ui text-[9px] tracking-[0.25em] text-(--gold)">
+                <div className="absolute left-3 top-3 rounded-full bg-surface/60 px-3 py-1 font-ui text-[9px] tracking-[0.25em] text-(--primary)">
                   {piece.category.toUpperCase()}
                 </div>
               </div>
 
               <div className="relative p-5">
-                <h3 className="font-display text-lg text-white">
+                <h3 className="font-display text-lg text-fg">
                   {piece.title}
                 </h3>
 
-                <div className="mt-2 flex items-center gap-3 text-white/50">
+                <div className="mt-2 flex items-center gap-3 text-fg/50">
                   <span className="font-ui text-[10px] tracking-[0.15em]">
                     {piece.material}
                   </span>
-                  <span className="text-(--gold)/40">·</span>
+                  <span className="text-(--primary)/40">·</span>
                   <span className="font-ui text-[10px] tracking-[0.15em]">
                     {piece.detail}
                   </span>

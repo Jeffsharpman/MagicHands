@@ -50,7 +50,7 @@ function Configurator() {
       <div
         className="absolute inset-0"
         style={{
-          background: "linear-gradient(180deg, #000, #0a0803 50%, #000)",
+          background: "linear-gradient(180deg, var(--surface), var(--surface-deep) 50%, var(--surface))",
         }}
       />
       <div className="relative mx-auto max-w-7xl px-6">
@@ -63,17 +63,17 @@ function Configurator() {
         <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center">
           {/* 3D viewer */}
           <div
-            className="relative aspect-square w-full overflow-hidden rounded-[2rem] border border-(--gold)/20 bg-[radial-gradient(ellipse_at_center,#1a1408_0%,#000_70%)] shadow-[var(--shadow-elegant)] cursor-grab active:cursor-grabbing select-none"
+            className="relative aspect-square w-full overflow-hidden rounded-[2rem] border border-(--primary)/20 bg-[radial-gradient(ellipse_at_center,var(--surface-elevated)_0%,var(--surface)_70%)] shadow-[var(--shadow-elegant)] cursor-grab active:cursor-grabbing select-none"
             onMouseDown={(e) => (dragRef.current = { x: e.clientX, base: rot })}
           >
             {/* Studio floor */}
-            <div className="absolute inset-x-8 bottom-8 h-24 rounded-[50%] bg-gradient-to-b from-(--gold)/20 to-transparent blur-2xl" />
+            <div className="absolute inset-x-8 bottom-8 h-24 rounded-[50%] bg-gradient-to-b from-(--primary)/20 to-transparent blur-2xl" />
             {/* Spot rings */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="h-72 w-72 rounded-full border border-(--gold)/10" />
+              <div className="h-72 w-72 rounded-full border border-(--primary)/10" />
             </div>
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="h-96 w-96 rounded-full border border-(--gold)/5" />
+              <div className="h-96 w-96 rounded-full border border-(--primary)/5" />
             </div>
 
             {/* SVG preview */}
@@ -91,7 +91,7 @@ function Configurator() {
                   <linearGradient id="garmentG" x1="0" y1="0" x2="1" y2="1">
                     <stop offset="0%" stopColor={color.accent} />
                     <stop offset="50%" stopColor={color.hex} />
-                    <stop offset="100%" stopColor="#000" />
+                    <stop offset="100%" stopColor="var(--surface)" />
                   </linearGradient>
                   <linearGradient id="lapelG" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="0%" stopColor={color.accent} />
@@ -99,8 +99,8 @@ function Configurator() {
                   </linearGradient>
                 </defs>
                 {/* Mannequin head/stand */}
-                <ellipse cx="150" cy="30" rx="18" ry="20" fill="#1a1a1a" />
-                <rect x="146" y="45" width="8" height="20" fill="#1a1a1a" />
+                <ellipse cx="150" cy="30" rx="18" ry="20" fill="var(--surface-elevated)" />
+                <rect x="146" y="45" width="8" height="20" fill="var(--surface-elevated)" />
                 {/* Shoulders/jacket */}
                 <path
                   d="M 40 100 Q 150 60 260 100 L 270 480 L 30 480 Z"
@@ -109,7 +109,7 @@ function Configurator() {
                 {/* Shirt */}
                 <path
                   d="M 120 90 L 180 90 L 175 250 L 125 250 Z"
-                  fill="#f5f5f5"
+                  fill="var(--white-sharp)"
                 />
                 {/* Lapels */}
                 <path
@@ -133,10 +133,10 @@ function Configurator() {
                 />
                 {/* Buttons */}
                 {[190, 240, 290, 340].map((y) => (
-                  <circle key={y} cx="115" cy={y} r="4" fill="#D4AF37" />
+                  <circle key={y} cx="115" cy={y} r="4" fill="var(--primary)" />
                 ))}
                 {[190, 240, 290, 340].map((y) => (
-                  <circle key={y + 1} cx="185" cy={y} r="4" fill="#D4AF37" />
+                  <circle key={y + 1} cx="185" cy={y} r="4" fill="var(--primary)" />
                 ))}
                 {/* Pocket square */}
                 <rect
@@ -144,16 +144,16 @@ function Configurator() {
                   y="180"
                   width="18"
                   height="14"
-                  fill="#F5E6A7"
+                  fill="var(--primary-soft)"
                   transform="rotate(8 214 187)"
                 />
               </motion.svg>
             </div>
 
-            <div className="absolute left-5 top-5 glass rounded-full px-3 py-1.5 font-ui text-[10px] tracking-[0.3em] text-(--gold)">
+            <div className="absolute left-5 top-5 glass rounded-full px-3 py-1.5 font-ui text-[10px] tracking-[0.3em] text-(--primary)">
               LIVE PREVIEW
             </div>
-            <div className="absolute right-5 top-5 glass rounded-full px-3 py-1.5 font-ui text-[10px] tracking-[0.2em] text-white/70">
+            <div className="absolute right-5 top-5 glass rounded-full px-3 py-1.5 font-ui text-[10px] tracking-[0.2em] text-fg/70">
               DRAG TO ROTATE
             </div>
           </div>
@@ -162,10 +162,10 @@ function Configurator() {
           <div className="space-y-8">
             <div>
               <div className="mb-3 flex items-center justify-between">
-                <div className="font-ui text-[10px] tracking-[0.3em] text-(--gold)">
+                <div className="font-ui text-[10px] tracking-[0.3em] text-(--primary)">
                   FABRIC COLOR
                 </div>
-                <div className="font-display italic text-white/70">
+                <div className="font-display italic text-fg/70">
                   {color.name}
                 </div>
               </div>
@@ -174,14 +174,14 @@ function Configurator() {
                   <button
                     key={c.name}
                     onClick={() => setColor(c)}
-                    className={`group relative h-14 w-14 rounded-full border-2 transition-all ${color.name === c.name ? "border-(--gold) scale-110" : "border-white/10 hover:border-(--gold)/50"}`}
+                    className={`group relative h-14 w-14 rounded-full border-2 transition-all ${color.name === c.name ? "border-(--primary) scale-110" : "border-white/10 hover:border-(--primary)/50"}`}
                     style={{
                       background: `linear-gradient(135deg, ${c.accent}, ${c.hex})`,
                     }}
                     aria-label={c.name}
                   >
                     {color.name === c.name && (
-                      <span className="absolute -bottom-1 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-(--gold)" />
+                      <span className="absolute -bottom-1 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-(--primary)" />
                     )}
                   </button>
                 ))}
@@ -189,7 +189,7 @@ function Configurator() {
             </div>
 
             <div>
-              <div className="mb-3 font-ui text-[10px] tracking-[0.3em] text-(--gold)">
+              <div className="mb-3 font-ui text-[10px] tracking-[0.3em] text-(--primary)">
                 ACCENT
               </div>
               <div className="flex flex-wrap gap-3">
@@ -197,7 +197,7 @@ function Configurator() {
                   <button
                     key={t.hex}
                     onClick={() => setTie(t)}
-                    className={`h-12 w-8 rounded-md border-2 transition-transform hover:-translate-y-1 ${tie === t ? "border-(--gold) scale-105" : "border-white/10"}`}
+                    className={`h-12 w-8 rounded-md border-2 transition-transform hover:-translate-y-1 ${tie === t ? "border-(--primary) scale-105" : "border-white/10"}`}
                     style={{ background: t.hex }}
                     aria-label={`Accent color: ${t.name}`}
                   />
@@ -213,10 +213,10 @@ function Configurator() {
                 ["FIT", "Slim Tailored"],
               ].map(([k, v]) => (
                 <div key={k} className="glass rounded-xl p-4">
-                  <div className="font-ui text-[9px] tracking-[0.3em] text-(--gold)/80">
+                  <div className="font-ui text-[9px] tracking-[0.3em] text-(--primary)/80">
                     {k}
                   </div>
-                  <div className="mt-1 font-display text-sm text-white">
+                  <div className="mt-1 font-display text-sm text-fg">
                     {v}
                   </div>
                 </div>
@@ -225,7 +225,7 @@ function Configurator() {
 
             <a
               href="#contact"
-              className="group inline-flex w-full items-center justify-between rounded-full bg-gold-gradient px-6 py-4 font-ui text-xs font-semibold uppercase tracking-[0.25em] text-black shadow-[0_20px_50px_-15px_rgba(212,175,55,0.6)] transition-transform hover:scale-[1.02]"
+              className="group inline-flex w-full items-center justify-between rounded-full bg-gold-gradient px-6 py-4 font-ui text-xs font-semibold uppercase tracking-[0.25em] text-black shadow-[var(--shadow-primary-button)] transition-transform hover:scale-[1.02]"
             >
               <span>Order This Look</span>
               <span className="transition-transform group-hover:translate-x-1">

@@ -39,19 +39,19 @@ function FAQ() {
           {FAQS.map(([question, answer], index) => (
             <div
               key={index}
-              className="overflow-hidden rounded-2xl border border-(--gold)/20 bg-[#0a0806]/60"
+              className="overflow-hidden rounded-2xl border border-(--primary)/20 bg-surface-card/60"
             >
               <button
                 onClick={() => setOpen(open === index ? null : index)}
                 aria-expanded={open === index}
-                className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left transition-colors hover:bg-(--gold)/5"
+                className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left transition-colors hover:bg-(--primary)/5"
               >
-                <span className="font-display text-lg text-white md:text-xl">
+                <span className="font-display text-lg text-fg md:text-xl">
                   {question}
                 </span>
 
                 <span
-                  className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-(--gold)/40 text-(--gold) transition-transform ${
+                  className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-(--primary)/40 text-(--primary) transition-transform ${
                     open === index ? "rotate-45" : ""
                   }`}
                 >
@@ -70,7 +70,7 @@ function FAQ() {
                       ease: [0.16, 1, 0.3, 1],
                     }}
                   >
-                    <div className="px-6 pb-6 text-white/70 leading-relaxed">
+                    <div className="px-6 pb-6 text-fg/70 leading-relaxed">
                       {answer}
                     </div>
                   </motion.div>
