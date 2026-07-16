@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 import SectionHeader from "../ui/SectionHeader";
+import Badge from "../ui/Badge";
+import Eyebrow from "../ui/Eyebrow";
+import Button from "../ui/Button";
 
 const FABRIC_COLORS = [
   { name: "Onyx", hex: "#0a0a0a", accent: "#1a1a1a" },
@@ -150,11 +153,11 @@ function Configurator() {
               </motion.svg>
             </div>
 
-            <div className="absolute left-5 top-5 glass rounded-full px-3 py-1.5 font-ui text-[10px] tracking-[0.3em] text-(--primary)">
-              LIVE PREVIEW
+            <div className="absolute left-5 top-5">
+              <Badge variant="glass" size="md">LIVE PREVIEW</Badge>
             </div>
-            <div className="absolute right-5 top-5 glass rounded-full px-3 py-1.5 font-ui text-[10px] tracking-[0.2em] text-fg/70">
-              DRAG TO ROTATE
+            <div className="absolute right-5 top-5">
+              <Badge variant="glass" size="md" className="!text-fg/70">DRAG TO ROTATE</Badge>
             </div>
           </div>
 
@@ -162,9 +165,7 @@ function Configurator() {
           <div className="space-y-8">
             <div>
               <div className="mb-3 flex items-center justify-between">
-                <div className="font-ui text-[10px] tracking-[0.3em] text-(--primary)">
-                  FABRIC COLOR
-                </div>
+                <Eyebrow>FABRIC COLOR</Eyebrow>
                 <div className="font-display italic text-fg/70">
                   {color.name}
                 </div>
@@ -189,9 +190,7 @@ function Configurator() {
             </div>
 
             <div>
-              <div className="mb-3 font-ui text-[10px] tracking-[0.3em] text-(--primary)">
-                ACCENT
-              </div>
+              <Eyebrow className="mb-3">ACCENT</Eyebrow>
               <div className="flex flex-wrap gap-3">
                 {ACCENT_COLORS.map((t) => (
                   <button
@@ -223,15 +222,9 @@ function Configurator() {
               ))}
             </div>
 
-            <a
-              href="#contact"
-              className="group inline-flex w-full items-center justify-between rounded-full bg-gold-gradient px-6 py-4 font-ui text-xs font-semibold uppercase tracking-[0.25em] text-black shadow-[var(--shadow-primary-button)] transition-transform hover:scale-[1.02]"
-            >
-              <span>Order This Look</span>
-              <span className="transition-transform group-hover:translate-x-1">
-                →
-              </span>
-            </a>
+            <Button href="#contact" size="lg" shadow="button" arrow className="w-full justify-between">
+              Order This Look
+            </Button>
           </div>
         </div>
       </div>

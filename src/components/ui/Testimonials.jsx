@@ -1,5 +1,6 @@
 import { Star } from "lucide-react";
 import SectionHeader from "./SectionHeader";
+import Card from "./Card";
 
 const TESTIMONIALS = [
   {

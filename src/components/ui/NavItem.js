@@ -7,3 +7,5 @@ const NAV = [
   ["Gallery", "#gallery"],
   ["Contact", "#contact"],
 ];
+
+export default NAV;

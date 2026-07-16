@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import SectionHeader from "../ui/SectionHeader";
+import Badge from "../ui/Badge";
 import cBusiness from "../../assets/collection-business.jpg";
 import cAccessories from "../../assets/collection-accessories.jpg";
 import cFootwear from "../../assets/collection-footwear.jpg";
@@ -72,8 +73,8 @@ function CollectionCard({ c, i }) {
           }}
         />
 
-        <div className="absolute right-4 top-4 rounded-full glass px-3 py-1.5 font-ui text-[9px] tracking-[0.3em] text-(--primary)">
-          NEW
+        <div className="absolute right-4 top-4">
+          <Badge variant="glass">NEW</Badge>
         </div>
       </div>
 

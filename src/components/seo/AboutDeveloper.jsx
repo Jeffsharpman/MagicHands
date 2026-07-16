@@ -1,4 +1,6 @@
 import { DEVELOPER } from "./SEOHead";
+import Button from "../ui/Button";
+import Eyebrow from "../ui/Eyebrow";
 
 const Icons = {
   portfolio: (
@@ -53,9 +55,7 @@ export default function AboutDeveloper() {
       />
 
       <div className="relative mx-auto max-w-4xl px-6 text-center">
-        <div className="mb-4 font-ui text-[10px] tracking-[0.4em] text-(--primary)/60">
-          PRODUCT ENGINEER
-        </div>
+        <Eyebrow as="div" color="muted" className="mb-4">PRODUCT ENGINEER</Eyebrow>
 
         <h2 className="font-display text-3xl font-bold tracking-tight text-fg md:text-4xl">
           Oyenuga Joshua{" "}
@@ -77,26 +77,13 @@ export default function AboutDeveloper() {
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-          <a
-            href={DEVELOPER.portfolio}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 rounded-full bg-gold-gradient px-7 py-3.5 font-ui text-xs font-semibold uppercase tracking-[0.2em] text-black transition-transform hover:scale-[1.03]"
-          >
+          <Button href={DEVELOPER.portfolio} target="_blank" rel="noopener noreferrer" size="md" arrow>
             View the Sharpman Portfolio
-            <span className="transition-transform group-hover:translate-x-1">
-              →
-            </span>
-          </a>
+          </Button>
 
-          <a
-            href={DEVELOPER.portfolio + "#projects"}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-(--primary)/30 px-7 py-3.5 font-ui text-xs font-semibold uppercase tracking-[0.2em] text-(--primary) transition-all hover:bg-(--primary)/10"
-          >
+          <Button href={DEVELOPER.portfolio + "#projects"} target="_blank" rel="noopener noreferrer" variant="outline" size="md">
             More Sharpman Projects
-          </a>
+          </Button>
         </div>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3">

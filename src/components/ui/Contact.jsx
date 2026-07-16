@@ -1,4 +1,7 @@
 import SectionHeader from "./SectionHeader";
+import Button from "./Button";
+import Eyebrow from "./Eyebrow";
+import Card from "./Card";
 
 function Contact() {
   const handleSubmit = (e) => {
@@ -37,9 +40,7 @@ function Contact() {
                 ["Occasion", "text", "occasion"],
               ].map(([label, type, name]) => (
                 <div key={name} className="relative">
-                  <label className="font-ui text-[10px] tracking-[0.3em] text-(--primary)">
-                    {label.toUpperCase()}
-                  </label>
+                  <Eyebrow as="label">{label.toUpperCase()}</Eyebrow>
 
                   <input
                     type={type}
@@ -51,9 +52,7 @@ function Contact() {
               ))}
 
               <div className="md:col-span-2">
-                <label className="font-ui text-[10px] tracking-[0.3em] text-(--primary)">
-                  PREFERRED DATE
-                </label>
+                <Eyebrow as="label">PREFERRED DATE</Eyebrow>
 
                 <input
                   type="date"
@@ -62,9 +61,7 @@ function Contact() {
               </div>
 
               <div className="md:col-span-2">
-                <label className="font-ui text-[10px] tracking-[0.3em] text-(--primary)">
-                  DESCRIBE YOUR OCCASION OR STYLE PREFERENCE
-                </label>
+                <Eyebrow as="label">DESCRIBE YOUR OCCASION OR STYLE PREFERENCE</Eyebrow>
 
                 <textarea
                   rows={4}
@@ -73,15 +70,9 @@ function Contact() {
               </div>
             </div>
 
-            <button
-              type="submit"
-              className="mt-7 group inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold-gradient px-8 py-4 font-ui text-xs font-semibold uppercase tracking-[0.25em] text-black shadow-[var(--shadow-primary-button)] transition-transform hover:scale-[1.02]"
-            >
+            <Button type="submit" size="lg" shadow="button" arrow className="mt-7 w-full justify-center">
               Reserve Consultation
-              <span className="transition-transform group-hover:translate-x-1">
-                →
-              </span>
-            </button>
+            </Button>
           </form>
 
           {/* Contact Information */}

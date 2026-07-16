@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import SectionHeader from "./SectionHeader";
+import Card from "./Card";
 const FAQS = [
   [
     "How long does a custom order take?",
@@ -37,10 +38,7 @@ function FAQ() {
 
         <div className="space-y-3">
           {FAQS.map(([question, answer], index) => (
-            <div
-              key={index}
-              className="overflow-hidden rounded-2xl border border-(--primary)/20 bg-surface-card/60"
-            >
+            <Card key={index} variant="accent" className="overflow-hidden">
               <button
                 onClick={() => setOpen(open === index ? null : index)}
                 aria-expanded={open === index}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Sun, Moon } from "lucide-react";
+import Button from "./Button";
 
 function getStoredTheme() {
   if (typeof window === "undefined") return "dark";
@@ -25,10 +26,11 @@ function ThemeToggle({ className = "" }) {
   const toggle = () => setTheme((t) => (t === "dark" ? "light" : "dark"));
 
   return (
-    <button
+    <Button
+      variant="icon"
       onClick={toggle}
       aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-      className={`group relative flex h-10 w-10 items-center justify-center rounded-full border border-(--primary)/30 bg-surface-card/50 backdrop-blur-sm transition-colors hover:border-(--primary)/60 hover:bg-surface-card ${className}`}
+      className={className}
     >
       <AnimatePresence mode="wait" initial={false}>
         {theme === "dark" ? (
@@ -53,7 +55,7 @@ function ThemeToggle({ className = "" }) {
           </motion.span>
         )}
       </AnimatePresence>
-    </button>
+    </Button>
   );
 }
 

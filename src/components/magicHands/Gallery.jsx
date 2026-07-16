@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import SectionHeader from "../ui/SectionHeader";
+import Badge from "../ui/Badge";
 import cTraditional from "../../assets/collection-traditional.jpg";
 import cBusiness from "../../assets/collection-business.jpg";
 import cAccessories from "../../assets/collection-accessories.jpg";
@@ -107,8 +108,8 @@ function Gallery() {
                   className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-110"
                 />
 
-                <div className="absolute left-3 top-3 rounded-full bg-surface/60 px-3 py-1 font-ui text-[9px] tracking-[0.25em] text-(--primary)">
-                  {piece.category.toUpperCase()}
+                <div className="absolute left-3 top-3">
+                  <Badge variant="solid">{piece.category.toUpperCase()}</Badge>
                 </div>
               </div>
 

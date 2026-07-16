@@ -2,16 +2,9 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import Logo from "./Logo";
 import ThemeToggle from "./ThemeToggle";
-
-const NAV = [
-  ["Home", "#home"],
-  ["Collections", "#collections"],
-  ["About", "#about"],
-  ["Style Lab", "#occasions"],
-  ["Testimonials", "#testimonials"],
-  ["Gallery", "#gallery"],
-  ["Contact", "#contact"],
-];
+import Button from "./Button";
+import NavLink from "./NavLink";
+import NAV from "./NavItem";
 
 function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -51,27 +44,18 @@ function Nav() {
         {/* Desktop Navigation */}
         <nav className="hidden flex-1 items-center justify-center gap-5 xl:gap-8 lg:flex">
           {NAV.map(([label, href]) => (
-            <a
-              key={href}
-              href={href}
-              className="group relative font-ui text-[11px] uppercase tracking-[0.14em] text-fg/80 transition-colors duration-300 hover:text-(--primary)"
-            >
+            <NavLink key={href} href={href} variant="desktop">
               {label}
-
-              <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold-gradient transition-all duration-300 group-hover:w-full" />
-            </a>
+            </NavLink>
           ))}
         </nav>
 
         {/* Desktop CTA */}
         <div className="hidden items-center gap-2 lg:flex">
           <ThemeToggle />
-          <a
-            href="#contact"
-            className="inline-flex items-center rounded-full bg-gold-gradient px-4 xl:px-5 py-2 font-ui text-[10px] xl:text-[11px] font-semibold uppercase tracking-[0.15em] text-black shadow-[var(--shadow-primary-glow-sm)] transition duration-300 hover:scale-105"
-          >
+          <Button href="#contact" size="sm" shadow="glow-sm">
             Book Appointment
-          </a>
+          </Button>
         </div>
 
         {/* Mobile Menu */}
@@ -128,23 +112,19 @@ function Nav() {
           >
             <div className="flex flex-col gap-5">
               {NAV.map(([label, href]) => (
-                <a
+                <NavLink
                   key={href}
                   href={href}
+                  variant="mobile"
                   onClick={() => setOpen(false)}
-                  className="font-ui text-sm uppercase tracking-[0.18em] text-fg/80 transition-colors hover:text-(--primary)"
                 >
                   {label}
-                </a>
+                </NavLink>
               ))}
 
-              <a
-                href="#contact"
-                onClick={() => setOpen(false)}
-                className="mt-2 inline-flex justify-center rounded-full bg-gold-gradient px-5 py-3 font-ui text-xs font-semibold uppercase tracking-[0.18em] text-black transition hover:scale-[1.02]"
-              >
+              <Button href="#contact" size="md" className="mt-2 w-full justify-center" onClick={() => setOpen(false)}>
                 Book Appointment
-              </a>
+              </Button>
             </div>
           </motion.div>
         )}

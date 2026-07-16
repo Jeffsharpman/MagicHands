@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import Particles from "../ui/Particles";
+import Badge from "../ui/Badge";
+import Eyebrow from "../ui/Eyebrow";
+import Button from "../ui/Button";
 import heroImage from "../../assets/hero-suit.jpg";
 
 function Hero() {
@@ -69,13 +72,12 @@ function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 1.6 }}
-            className="mb-6 inline-flex items-center gap-3 rounded-full border border-(--primary)/30 bg-white/[0.03] px-4 py-1.5"
+            className="mb-6 inline-flex items-center gap-3"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-(--primary) animate-pulse" />
-
-            <span className="font-ui text-[10px] tracking-[0.35em] text-(--primary)">
+            <Badge variant="border" size="md">
+              <span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-(--primary) animate-pulse" />
               FASHION BRAND · EST. 2019 · LAGOS
-            </span>
+            </Badge>
           </motion.div>
 
           <motion.h2
@@ -121,24 +123,14 @@ function Hero() {
             transition={{ duration: 1, delay: 2.3 }}
             className="mt-9 flex flex-col items-center gap-4 sm:flex-row lg:justify-start justify-center"
           >
-            <a
-              href="#contact"
-              className="group relative overflow-hidden rounded-full bg-gold-gradient px-8 py-4 font-ui text-xs font-semibold uppercase tracking-[0.25em] text-black shadow-[var(--shadow-primary-glow-md)] transition-transform hover:scale-[1.04]"
-            >
+            <Button href="#contact" size="lg" shadow="glow-md" className="group relative overflow-hidden">
               <span className="relative z-10">Book a Consultation</span>
-
               <span className="absolute inset-0 -translate-x-full bg-white/30 transition-transform duration-700 group-hover:translate-x-full" />
-            </a>
+            </Button>
 
-            <a
-              href="#collections"
-              className="group inline-flex items-center gap-2 rounded-full border border-(--primary)/40 px-8 py-4 font-ui text-xs font-semibold uppercase tracking-[0.25em] text-(--primary) transition-colors hover:bg-(--primary)/10"
-            >
+            <Button href="#collections" variant="outline" size="lg" arrow>
               View Collections
-              <span className="transition-transform group-hover:translate-x-1">
-                →
-              </span>
-            </a>
+            </Button>
           </motion.div>
 
           <motion.div
@@ -212,9 +204,7 @@ function Hero() {
 
                 <div className="absolute inset-x-6 bottom-6 flex items-end justify-between">
                   <div>
-                    <div className="font-ui text-[10px] tracking-[0.35em] text-(--primary)/80">
-                      SIGNATURE COLLECTION
-                    </div>
+                    <Eyebrow size="sm" className="text-(--primary)/80">SIGNATURE COLLECTION</Eyebrow>
 
                     <div className="font-display text-xl text-fg">
                       Onyx Double-Breasted
@@ -238,9 +228,7 @@ function Hero() {
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 5, repeat: Infinity }}
               >
-                <div className="font-ui text-[9px] tracking-[0.3em] text-(--primary)">
-                  PREMIUM MATERIALS
-                </div>
+                <Eyebrow size="sm">PREMIUM MATERIALS</Eyebrow>
 
                 <div className="font-display text-sm text-fg">
                   Italian & English Mills
@@ -252,9 +240,7 @@ function Hero() {
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 6, repeat: Infinity }}
               >
-                <div className="font-ui text-[9px] tracking-[0.3em] text-(--primary)">
-                  QUALITY GUARANTEE
-                </div>
+                <Eyebrow size="sm">QUALITY GUARANTEE</Eyebrow>
 
                 <div className="font-display text-sm text-fg">
                   Made to Last

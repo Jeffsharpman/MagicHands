@@ -1,15 +1,9 @@
 import Logo from "./Logo";
+import Button from "./Button";
+import NavLink from "./NavLink";
+import Eyebrow from "./Eyebrow";
 import FooterAttribution from "../seo/FooterAttribution";
-
-const NAV = [
-  ["Home", "#home"],
-  ["Collections", "#collections"],
-  ["About", "#about"],
-  ["Style Lab", "#occasions"],
-  ["Testimonials", "#testimonials"],
-  ["Gallery", "#gallery"],
-  ["Contact", "#contact"],
-];
+import NAV from "./NavItem";
 
 function Footer() {
   const handleNewsletterSubmit = (e) => {
@@ -78,32 +72,31 @@ function Footer() {
                   ),
                 },
               ].map((social) => (
-                <a
+                <Button
                   key={social.label}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-(--primary)/30 text-(--primary) transition-all hover:bg-gold-gradient hover:text-black"
+                  variant="icon"
+                  className="!border-(--primary)/30 text-(--primary) hover:!bg-gold-gradient hover:!text-black"
                 >
                   {social.icon}
-                </a>
+                </Button>
               ))}
             </div>
           </div>
 
           {/* Navigation */}
           <div>
-            <div className="mb-4 font-ui text-[10px] tracking-[0.3em] text-(--primary)">
-              EXPLORE
-            </div>
+            <Eyebrow as="div" className="mb-4">EXPLORE</Eyebrow>
 
             <ul className="space-y-2 text-fg/60">
               {NAV.map(([label, href]) => (
                 <li key={href}>
-                  <a href={href} className="hover:text-(--primary)">
+                  <NavLink href={href} variant="footer">
                     {label}
-                  </a>
+                  </NavLink>
                 </li>
               ))}
             </ul>
@@ -111,9 +104,7 @@ function Footer() {
 
           {/* Newsletter */}
           <div>
-            <div className="mb-4 font-ui text-[10px] tracking-[0.3em] text-(--primary)">
-              NEWSLETTER
-            </div>
+            <Eyebrow as="div" className="mb-4">NEWSLETTER</Eyebrow>
 
             <p className="mb-3 text-sm text-fg/60">
               Exclusive drops and atelier invitations.
@@ -130,12 +121,9 @@ function Footer() {
                 className="flex-1 bg-transparent px-4 py-3 text-sm text-fg outline-none placeholder:text-fg/30"
               />
 
-              <button
-                type="submit"
-                className="bg-gold-gradient px-4 font-ui text-[10px] font-semibold uppercase tracking-[0.2em] text-black"
-              >
+              <Button type="submit" className="!px-4 !py-3 !text-[10px] !tracking-[0.2em]">
                 Join
-              </button>
+              </Button>
             </form>
           </div>
         </div>
