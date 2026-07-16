@@ -1,7 +1,6 @@
 import SectionHeader from "./SectionHeader";
 import Button from "./Button";
 import Eyebrow from "./Eyebrow";
-import Card from "./Card";
 
 function Contact() {
   const handleSubmit = (e) => {

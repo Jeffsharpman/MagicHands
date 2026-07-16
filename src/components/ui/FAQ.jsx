@@ -74,7 +74,7 @@ function FAQ() {
                   </motion.div>
                 )}
               </AnimatePresence>
-            </div>
+            </Card>
           ))}
         </div>
       </div>

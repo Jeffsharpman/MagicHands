@@ -64,10 +64,7 @@ function Testimonials() {
           style={{ animationDuration: "50s" }}
         >
           {[...TESTIMONIALS, ...TESTIMONIALS].map((testimonial, index) => (
-            <div
-              key={index}
-              className="w-[340px] shrink-0 rounded-3xl glass p-7"
-            >
+            <Card key={index} variant="glass" rounded="3xl" padding="p-7" className="w-[340px] shrink-0">
               <div
                 className="mb-3 flex gap-0.5 text-(--primary)"
                 aria-label="5 out of 5 stars"
@@ -96,7 +93,7 @@ function Testimonials() {
                   </div>
                 </div>
               </div>
-            </div>
+            </Card>
           ))}
         </div>
       </div>
